@@ -1,0 +1,76 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#eee"
+    tools:context=".MainActivity" >
+
+    <RelativeLayout
+        android:id="@+id/main_rl"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/ic_title_bg2" >
+
+        <TextView
+            android:id="@+id/main_tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:paddingBottom="10dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="☛　新闻　"
+            android:textColor="#fff"
+            android:textSize="16sp"
+            android:textStyle="italic|bold" />
+    </RelativeLayout>
+
+    <com.news.news.ui.MyFramPage
+        android:id="@+id/main_fram"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/main_groaup"
+        android:layout_below="@+id/main_rl" >
+    </com.news.news.ui.MyFramPage>
+
+    <RadioGroup
+        android:id="@+id/main_groaup"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:background="#ddd"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/radio1"
+            style="@style/MainBtGroup"
+            android:checked="true"
+            android:drawableTop="@drawable/select_rd1"
+            android:text="新闻" />
+
+        <RadioButton
+            android:id="@+id/radio2"
+            style="@style/MainBtGroup"
+            android:drawableTop="@drawable/select_rd2"
+            android:text="娱乐" />
+        <RadioButton
+            android:id="@+id/radio3"
+            style="@style/MainBtGroup"
+            android:drawableTop="@drawable/select_rd3"
+            android:text="视频" />
+
+        <RadioButton
+            android:id="@+id/radio4"
+            style="@style/MainBtGroup"
+            android:drawableTop="@drawable/select_rd4"
+            android:text="发现" />
+
+        <RadioButton
+            android:id="@+id/radio5"
+            style="@style/MainBtGroup"
+            android:drawableTop="@drawable/select_rd5"
+            android:text="我的" />
+    </RadioGroup>
+
+</RelativeLayout>

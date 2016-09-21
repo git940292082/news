@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <include 
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/title"/>
+
+    <RelativeLayout
+        android:id="@+id/fgpwd_rl_form"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title"
+        android:background="#0050f0"
+        android:paddingBottom="0.5dp"
+        android:paddingTop="0.5dp" >
+
+        <TextView
+            android:id="@+id/fgpwd_tv_username"
+            android:layout_width="80dp"
+            android:layout_height="36dp"
+            android:layout_marginBottom="0.5dp"
+            android:layout_marginRight="0.5dp"
+            android:background="#ffffff"
+            android:gravity="left|center"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:text="@string/username"
+            android:textColor="#333333"
+            android:textSize="14sp" />
+        <EditText
+            android:id="@+id/fgpwd_et_username"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:layout_alignTop="@+id/fgpwd_tv_username"
+            android:layout_toRightOf="@+id/fgpwd_tv_username"
+            android:background="#ffffff"
+            android:inputType="text"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:textColor="#333333"
+            android:hint="输入您的用户名"
+            android:textSize="14sp" >
+
+        </EditText>
+        <TextView
+            android:id="@+id/fgpwd_tv_class"
+            android:layout_width="80dp"
+            android:layout_height="36dp"
+            android:layout_below="@+id/fgpwd_tv_username"
+            android:layout_marginBottom="0.5dp"
+            android:background="#ffffff"
+            android:gravity="left|center"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:text="@string/email"
+            android:textColor="#333333"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/fgpwd_et_class"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:layout_alignLeft="@+id/fgpwd_et_username"
+            android:layout_alignTop="@+id/fgpwd_tv_class"
+            android:background="#ffffff"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:textColor="#333333"
+            android:hint="输入邮箱"
+            android:textSize="14sp" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/fgpwd_btn_achieve"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:layout_below="@+id/fgpwd_rl_form"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="16dp"
+        android:background="@drawable/lg_selector_button"
+        android:minHeight="0dp"
+        android:minWidth="0dp"
+        android:text="下一步"
+        android:textColor="#ffffff"
+        android:textSize="14sp" />
+
+</RelativeLayout>
