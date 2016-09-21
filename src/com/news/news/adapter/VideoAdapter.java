@@ -49,7 +49,6 @@ public class VideoAdapter  extends MyAdapter<Video>{
 		load(holder,video);
 		return layout;
 	}
-
 	private void load(final Holder holder, final Video video) {
 		// TODO Auto-generated method stub
 		holder.tvTitle.setText(video.getTitle());
@@ -76,21 +75,19 @@ public class VideoAdapter  extends MyAdapter<Video>{
 						holders.vvVideo.stopPlayback();
 						holders.isplay=false;
 					}
-					
-					String url=video.getMp4_url();
+					String url=video.getMp4Hd_url();
 					holder.imPlay.setImageResource(R.drawable.ic_video_pause);
 					holder.imPlay.setVisibility(View.GONE); 
 					holder.pvCache.setVisibility(View.VISIBLE); 
-					if(url==null||url.equals("")){
-						Toast.makeText(getContext(), "该视频不存在", Toast.LENGTH_SHORT).show();
-						return;
+					if(url==null||url.equals("")||url.equals("null")){
+						url=video.getMp4_url();
 					}
 					holder.isplay=true;
 					Uri uri=Uri.parse(url);
 					// TODO Auto-generated method stub
 					holder.vvVideo.setVideoURI(uri);
+					holder.vvVideo.requestFocus(); 
 					holder.vvVideo.start();
-					Toast.makeText(getContext(), "播放", Toast.LENGTH_SHORT).show();
 					holders=holder;
 				}else{
 					if(holder.vvVideo.isPlaying()){
@@ -99,7 +96,7 @@ public class VideoAdapter  extends MyAdapter<Video>{
 					}else{
 						holder.vvVideo.start();
 						holder.imPlay.setImageResource(R.drawable.ic_video_pause);
-						
+
 					}
 
 				}
@@ -121,7 +118,7 @@ public class VideoAdapter  extends MyAdapter<Video>{
 				}
 			}
 		});
-		
+
 		holder.vvVideo.setOnPreparedListener(new OnPreparedListener() {
 			@Override
 			public void onPrepared(MediaPlayer mp) {
@@ -163,16 +160,16 @@ public class VideoAdapter  extends MyAdapter<Video>{
 		boolean isload;
 		boolean isplay;
 		public Holder(View layout) {
-			 tvTitle=(TextView) layout.findViewById(R.id.video_news_tv_title);
-			 tvNowTime=(TextView) layout.findViewById(R.id.video_nowtime);
-			 tvSumTime=(TextView) layout.findViewById(R.id.video_sumtime);
-			 imPlay=(ImageView) layout.findViewById(R.id.video_play);
-			 vvVideo=(VideoView) layout.findViewById(R.id.video_vv);
-			 pvCache=(ProgressBar)layout.findViewById(R.id.video_cache);
-			 rlBar=(RelativeLayout) layout.findViewById(R.id.video_rl_bar);
-			 skVideo=(SeekBar) layout.findViewById(R.id.video_seekbar);
-			 imgBg=(ImageView) layout.findViewById(R.id.video_bg);
-			 btRlVisi=(Button) layout.findViewById(R.id.video_rl_visi);
+			tvTitle=(TextView) layout.findViewById(R.id.video_news_tv_title);
+			tvNowTime=(TextView) layout.findViewById(R.id.video_nowtime);
+			tvSumTime=(TextView) layout.findViewById(R.id.video_sumtime);
+			imPlay=(ImageView) layout.findViewById(R.id.video_play);
+			vvVideo=(VideoView) layout.findViewById(R.id.video_vv);
+			pvCache=(ProgressBar)layout.findViewById(R.id.video_cache);
+			rlBar=(RelativeLayout) layout.findViewById(R.id.video_rl_bar);
+			skVideo=(SeekBar) layout.findViewById(R.id.video_seekbar);
+			imgBg=(ImageView) layout.findViewById(R.id.video_bg);
+			btRlVisi=(Button) layout.findViewById(R.id.video_rl_visi);
 		}
 	}
 }

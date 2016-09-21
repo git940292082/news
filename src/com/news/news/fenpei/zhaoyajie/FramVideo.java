@@ -105,8 +105,6 @@ public class FramVideo extends Fragment {
 				Videos=videos;
 				adapter=new VideoAdapter(getActivity(), videos);
 				isResing=true;
-				View v=LayoutInflater.from(getActivity()).inflate(R.layout.fram_find, null);
-				lv.addHeaderView(v);
 				lv.setAdapter(adapter);
 				
 			}
