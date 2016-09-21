@@ -6,11 +6,11 @@ import com.news.news.R;
 import com.news.news.R.id;
 import com.news.news.R.layout;
 import com.news.news.R.menu;
-import com.news.news.fenpei.huangfangzhou.FramNews;
-import com.news.news.fenpei.lijie.FramMine;
-import com.news.news.fenpei.zhangxinbing.FramFunny;
-import com.news.news.fenpei.zhaoyajie.FramFind;
-import com.news.news.fenpei.zhaoyajie.FramVideo;
+import com.news.news.fragment.FramFind;
+import com.news.news.fragment.FramFunny;
+import com.news.news.fragment.FramMine;
+import com.news.news.fragment.FramNews;
+import com.news.news.fragment.FramVideo;
 
 import android.os.Bundle;
 import android.app.Activity;

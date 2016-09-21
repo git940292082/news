@@ -1,4 +1,4 @@
-package com.news.news.fenpei.zhaoyajie;
+package com.news.news.fragment;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,8 +8,8 @@ import pl.droidsonroids.gif.GifImageView;
 import com.news.news.R;
 import com.news.news.adapter.VideoAdapter;
 import com.news.news.entity.Video;
-import com.news.news.fenpei.zhaoyajie.model.IVideoCallback;
-import com.news.news.fenpei.zhaoyajie.model.VideoModel;
+import com.news.news.model.IVideoCallback;
+import com.news.news.model.VideoModel;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;

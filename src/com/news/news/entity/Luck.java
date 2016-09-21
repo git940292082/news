@@ -1,4 +1,4 @@
-package com.news.news.untils;
+package com.news.news.entity;
 
 public class Luck {
 	private String date; //Ê±¼ä

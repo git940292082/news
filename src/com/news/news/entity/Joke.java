@@ -1,4 +1,4 @@
-package com.news.news.untils;
+package com.news.news.entity;
 
 //Ð¦»°·â×°
 public class Joke {  

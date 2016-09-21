@@ -1,4 +1,4 @@
-package com.news.news.fenpei.lijie;
+package com.news.news.fragment;
 
 import com.news.news.R;
 
@@ -9,15 +9,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class FramMine extends Fragment {
+public class FramFunny extends Fragment {
 	private View view;
-
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		if(view==null){
-			view=inflater.inflate(R.layout.fram_mine, null);
-			Log.i("123", "FramMine");
+			view=inflater.inflate(R.layout.fram_funny, null);
+			Log.i("123", "FramFunny");
 		}else{
 			((ViewGroup) view.getParent()).removeView(view); 
 		}

@@ -1,4 +1,4 @@
-package com.news.news.fenpei.zhaoyajie;
+package com.news.news.fragment;
 import com.news.news.R;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;

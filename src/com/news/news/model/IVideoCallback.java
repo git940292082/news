@@ -1,4 +1,4 @@
-package com.news.news.fenpei.zhaoyajie.model;
+package com.news.news.model;
 
 import java.util.List;
 
