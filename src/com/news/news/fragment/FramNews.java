@@ -32,20 +32,19 @@ public class FramNews extends Fragment {
 	//新闻Frag
 	private List<Fragment> newsFragments;
 	private View view;
-
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		if(view==null){
-		View view = inflater.inflate(R.layout.fram_news, null);
-		// 初始化
-		setViews(view);
-		// FragmentAdapter
-		setFragmentAdapter();
-		// 监听器
-		setListeners();
-		
-		
+			view = inflater.inflate(R.layout.fram_news, null);
+			// 初始化
+			setViews(view);
+			// FragmentAdapter
+			setFragmentAdapter();
+			// 监听器
+			setListeners();
+
+
 		}else{
 			((ViewGroup) view.getParent()).removeView(view); 
 		}
