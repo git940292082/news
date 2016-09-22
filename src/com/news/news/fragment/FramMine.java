@@ -18,6 +18,10 @@ public class FramMine extends Fragment {
 		if(view==null){
 			view=inflater.inflate(R.layout.fram_mine, null);
 			Log.i("123", "FramMine");
+			
+			
+			//初始数据在这里写
+			
 		}else{
 			((ViewGroup) view.getParent()).removeView(view); 
 		}

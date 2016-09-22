@@ -16,6 +16,12 @@ public class FramFind extends Fragment {
 		if(view==null){
 			view=inflater.inflate(R.layout.fram_find, null);
 			Log.i("123", "FramFind");
+			
+			
+			//初始数据在这里写
+			
+			
+			
 		}else{
 			((ViewGroup) view.getParent()).removeView(view); 
 		}
