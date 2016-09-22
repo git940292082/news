@@ -15,7 +15,6 @@ import android.widget.RadioGroup;
 public class FramNews extends Fragment {
 	private ViewPager vpFraments;
 	private RadioGroup rgNews;
-
 	private RadioButton rbRedian; // 热点
 	private RadioButton rbToutiao; // 头条
 	private RadioButton rbKeji; // 科技
