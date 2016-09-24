@@ -18,10 +18,8 @@ public class FramFunny extends Fragment {
 			view=inflater.inflate(R.layout.fram_funny, null);
 			Log.i("123", "FramFunny");
 			
-			
 			//初始数据在这里写
-			
-			//xcgkjkslgjklf
+		
 			
 		}else{
 			((ViewGroup) view.getParent()).removeView(view); 
