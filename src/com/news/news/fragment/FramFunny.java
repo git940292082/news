@@ -21,7 +21,7 @@ public class FramFunny extends Fragment {
 			
 			//初始数据在这里写
 			
-			
+			//xcgkjkslgjklf
 			
 		}else{
 			((ViewGroup) view.getParent()).removeView(view); 
