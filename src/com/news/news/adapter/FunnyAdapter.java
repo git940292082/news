@@ -22,6 +22,16 @@ import android.widget.TextView;
  * @author Shark Z  
  *
  */
+/**
+ * FunnyFragment 界面 adapter
+ * @author Shark Z  
+ *
+ */
+/**
+ * FunnyFragment 界面 adapter
+ * @author Shark Z  
+ *
+ */
 public class FunnyAdapter extends BaseAdapter{
 	
 	private List<FunnyItem> funnys;
