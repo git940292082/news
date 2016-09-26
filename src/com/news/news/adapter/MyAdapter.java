@@ -19,7 +19,10 @@ public abstract class MyAdapter<T> extends BaseAdapter {
 		setData(data);
 		inflater=LayoutInflater.from(context);
 	}
-	
+	//DSFGSGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG
+	//DSFGSGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG
+	//DSFGSGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG
+	//DSFGSGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG
 	protected LayoutInflater getInflater() {
 		return inflater;
 	}
