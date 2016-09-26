@@ -19,6 +19,13 @@ public abstract class MyAdapter<T> extends BaseAdapter {
 		setData(data);
 		inflater=LayoutInflater.from(context);
 	}
+//<<<<<<< HEAD
+//=======
+//	//DSFGSGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG
+//	//DSFGSGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG
+//	//DSFGSGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG
+//	//DSFGSGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG
+//>>>>>>> branch 'master' of https://github.com/git940292082/json
 	protected LayoutInflater getInflater() {
 		return inflater;
 	}

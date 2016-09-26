@@ -25,4 +25,6 @@
         <item>双鱼座 </item>
     </string-array>
 
+    <string name="title_activity_funny_fragment__item__to_">FunnyFragment_Item_To_Activity</string>
+
 </resources>

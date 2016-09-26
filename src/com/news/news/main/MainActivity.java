@@ -92,23 +92,23 @@ public class MainActivity extends FragmentActivity implements OnCheckedChangeLis
 		switch (checkedId) {
 		case R.id.radio1:
 			framPage.setCurrentItem(0,false);
-			tvTitle.setText("☛　新闻　");
+			tvTitle.setText("☛�?新闻�?");
 			break;
 		case R.id.radio2:
 			framPage.setCurrentItem(1,false);
-			tvTitle.setText("☛　搞笑　");
+			tvTitle.setText("☛�?搞笑�?");
 			break;
 		case R.id.radio3:
 			framPage.setCurrentItem(2,false);
-			tvTitle.setText("☛　视频　");
+			tvTitle.setText("☛�?视频�?");
 			break;
 		case R.id.radio4:
 			framPage.setCurrentItem(3,false);
-			tvTitle.setText("☛　发现　");
+			tvTitle.setText("☛�?发现�?");
 			break;
 		case R.id.radio5:
 			framPage.setCurrentItem(4,false);
-			tvTitle.setText("☛　我的　");
+			tvTitle.setText("☛�?我的�?");
 			break;
 		}
 	}
