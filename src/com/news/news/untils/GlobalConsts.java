@@ -14,11 +14,5 @@ public class GlobalConsts {
 	
 	
 	
-	
-	
-	
-	
-	
-	
 
 }

@@ -33,7 +33,6 @@ public class FunnyModelimpl implements FunnyModel {
 		mQueue = App.getmQueue();
 
 	}
-
 	@Override
 	public void getAllFunnys(final CommonCallback callback) {
 
@@ -78,7 +77,6 @@ public class FunnyModelimpl implements FunnyModel {
 
 		// 2.将请求加入队列
 		mQueue.add(stringRequest);
-
 	}
 
 }
