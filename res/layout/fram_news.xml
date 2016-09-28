@@ -18,24 +18,44 @@
             android:orientation="horizontal" >
 
             <RadioButton
-                android:id="@+id/rb_news_redian"
+                android:id="@+id/rb_news_toutiao"
                 android:layout_width="60dp"
                 android:layout_height="match_parent"
                 android:background="@drawable/select_bt_news"
                 android:button="@null"
                 android:checked="true"
                 android:gravity="center"
-                android:text="热点"
+                android:text="头条"
                 android:textColor="@color/Color.Main.a" />
 
             <RadioButton
-                android:id="@+id/rb_news_toutiao"
+                android:id="@+id/rb_news_shehui"
                 android:layout_width="60dp"
                 android:layout_height="match_parent"
                 android:background="@drawable/select_bt_news"
                 android:button="@null"
                 android:gravity="center"
-                android:text="头条"
+                android:text="社会"
+                android:textColor="@color/Color.Main.a" />
+
+            <RadioButton
+                android:id="@+id/rb_news_guonei"
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/select_bt_news"
+                android:button="@null"
+                android:gravity="center"
+                android:text="国内"
+                android:textColor="@color/Color.Main.a" />
+
+            <RadioButton
+                android:id="@+id/rb_news_guoji"
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/select_bt_news"
+                android:button="@null"
+                android:gravity="center"
+                android:text="国际"
                 android:textColor="@color/Color.Main.a" />
 
             <RadioButton
@@ -59,23 +79,13 @@
                 android:textColor="@color/Color.Main.a" />
 
             <RadioButton
-                android:id="@+id/rb_news_youxi"
+                android:id="@+id/rb_news_junshi"
                 android:layout_width="60dp"
                 android:layout_height="match_parent"
                 android:background="@drawable/select_bt_news"
                 android:button="@null"
                 android:gravity="center"
-                android:text="游戏"
-                android:textColor="@color/Color.Main.a" />
-
-            <RadioButton
-                android:id="@+id/rb_news_yingshi"
-                android:layout_width="60dp"
-                android:layout_height="match_parent"
-                android:background="@drawable/select_bt_news"
-                android:button="@null"
-                android:gravity="center"
-                android:text="影视"
+                android:text="军事"
                 android:textColor="@color/Color.Main.a" />
 
             <RadioButton
@@ -99,16 +109,6 @@
                 android:textColor="@color/Color.Main.a" />
 
             <RadioButton
-                android:id="@+id/rb_news_qiche"
-                android:layout_width="60dp"
-                android:layout_height="match_parent"
-                android:background="@drawable/select_bt_news"
-                android:button="@null"
-                android:gravity="center"
-                android:text="汽车"
-                android:textColor="@color/Color.Main.a" />
-
-            <RadioButton
                 android:id="@+id/rb_news_shishang"
                 android:layout_width="60dp"
                 android:layout_height="match_parent"
@@ -116,46 +116,6 @@
                 android:button="@null"
                 android:gravity="center"
                 android:text="时尚"
-                android:textColor="@color/Color.Main.a" />
-
-            <RadioButton
-                android:id="@+id/rb_news_junshi"
-                android:layout_width="60dp"
-                android:layout_height="match_parent"
-                android:background="@drawable/select_bt_news"
-                android:button="@null"
-                android:gravity="center"
-                android:text="军事"
-                android:textColor="@color/Color.Main.a" />
-
-            <RadioButton
-                android:id="@+id/rb_news_lishi"
-                android:layout_width="60dp"
-                android:layout_height="match_parent"
-                android:background="@drawable/select_bt_news"
-                android:button="@null"
-                android:gravity="center"
-                android:text="历史"
-                android:textColor="@color/Color.Main.a" />
-
-            <RadioButton
-                android:id="@+id/rb_news_caipiao"
-                android:layout_width="60dp"
-                android:layout_height="match_parent"
-                android:background="@drawable/select_bt_news"
-                android:button="@null"
-                android:gravity="center"
-                android:text="彩票"
-                android:textColor="@color/Color.Main.a" />
-
-            <RadioButton
-                android:id="@+id/rb_news_luntan"
-                android:layout_width="60dp"
-                android:layout_height="match_parent"
-                android:background="@drawable/select_bt_news"
-                android:button="@null"
-                android:gravity="center"
-                android:text="论坛"
                 android:textColor="@color/Color.Main.a" />
         </RadioGroup>
     </HorizontalScrollView>
