@@ -9,7 +9,6 @@ package com.news.news.presenter;
  */
 public interface FunnyPresenter {
 	
-	
 	/**
 	 * 获取所有Funny的方法
 	 */
