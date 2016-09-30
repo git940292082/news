@@ -16,15 +16,35 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
-public class FramFind extends Fragment implements IFindView,OnClickListener{
+public class FramFind extends Fragment implements IFindView,OnClickListener,OnItemSelectedListener{
 	
 	@ViewInject(R.id.find_jock_tvTalk)
 	TextView tvTalk;
 	@ViewInject(R.id.find_jock_img)
 	ImageView imgHuan;
+	@ViewInject(R.id.luck_all)
+	TextView tvAll;
+	@ViewInject(R.id.luck_color)
+	TextView tvColor;
+	@ViewInject(R.id.luck_health)
+	TextView tvHealth;
+	@ViewInject(R.id.luck_love)
+	TextView tvLove;
+	@ViewInject(R.id.luck_number)
+	TextView tvNumber;
+	@ViewInject(R.id.luck_QFriend)
+	TextView tvQFriend;
+	@ViewInject(R.id.luck_summary)
+	TextView tvSummary;
+	@ViewInject(R.id.luck_luck_sp)
+	Spinner sp;
 	private View view;
 	FindTalkPresenter presenter;
 	public FramFind() {
@@ -61,6 +81,7 @@ public class FramFind extends Fragment implements IFindView,OnClickListener{
 	public void showTalk(Talk talk) {
 		// TODO Auto-generated method stub
 		tvTalk.setText(talk.getContent());
+		sp.setOnItemSelectedListener(this);
 	}
 	@Override
 	public void onClick(View v) {
@@ -74,6 +95,23 @@ public class FramFind extends Fragment implements IFindView,OnClickListener{
 	@Override
 	public void showLuck(Luck luck) {
 		// TODO Auto-generated method stub
-		Log.i("loadLuckloadLuck", luck.toString());
+		tvAll.setText(luck.getAll()+"");
+		tvColor.setText(luck.getColor()+"");
+		tvHealth.setText(luck.getHealth()+"");
+		tvLove.setText(luck.getLove()+"");
+		tvNumber.setText(luck.getNumber()+"");
+		tvQFriend.setText(luck.getQFriend()+"");
+		tvSummary.setText(luck.getSummary()+"");
+	}
+	@Override
+	public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
+		// TODO Auto-generated method stub
+		String data = (String)sp.getItemAtPosition(arg2);
+		presenter.loadLuck(data);
+	}
+	@Override
+	public void onNothingSelected(AdapterView<?> arg0) {
+		// TODO Auto-generated method stub
+		
 	}
 }
