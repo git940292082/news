@@ -63,7 +63,7 @@ public class LoginActivity extends Activity {
 	private ImageButton weibo;
 	private ImageButton weixin;
 	private ImageButton qq;
-	private String mAppid = "1105719832";// 测试时使用，真正发布的时候要换成自己的APP_ID
+	private String mAppid = "222222";// 测试时使用，真正发布的时候要换成自己的APP_ID
 	private QQAuth mQQAuth;
 	private UserInfo mInfo;
 
