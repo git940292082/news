@@ -13,13 +13,14 @@ public class PreferencesService {
 		this.context = context;  
 	}  
 
-	public void saveUser(String name,String pwd,String classs,boolean a) {
+	public void saveUser(String name,String pwd,String classs,boolean a,boolean jizhu) {
 		SharedPreferences preferences = context.getSharedPreferences("denglu", Context.MODE_PRIVATE);  
 		Editor editor = preferences.edit();  
 		editor.putString("name", name);  
 		editor.putString("pwd", pwd);  
-		editor.putString("classs",classs);
+		editor.putString("email",classs);
 		editor.putBoolean("boolean", a);
+		editor.putBoolean("jizhu",jizhu);
 		editor.commit();  
 	}  
 	public Map<String, Object> getUserPerferences() {
@@ -27,8 +28,9 @@ public class PreferencesService {
 		SharedPreferences preferences = context.getSharedPreferences("denglu", Context.MODE_PRIVATE);  
 		params.put("name", preferences.getString("name", ""));  
 		params.put("pwd", preferences.getString("pwd", ""));  
-		params.put("classs", preferences.getString("classs", ""));
+		params.put("classs", preferences.getString("email", ""));
 		params.put("boolean", preferences.getBoolean("boolean", false));
+		params.put("jizhu", preferences.getBoolean("jizhu", false));
 		return params;  
 	}
 }
