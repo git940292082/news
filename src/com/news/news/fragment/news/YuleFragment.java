@@ -1,5 +1,7 @@
 package com.news.news.fragment.news;
 
+import java.util.ArrayList;
+import java.util.List;
 
 import org.xutils.x;
 import org.xutils.view.annotation.ViewInject;
@@ -20,14 +22,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
+import android.widget.AdapterView.OnItemClickListener;
 
-public class ToutiaoFragment extends Fragment {
+public class YuleFragment extends Fragment {
 	private View view;
 	private News newTop;
 	private NewsAdapter adapter;
 	private INewsModel model;
+	private List<Toutiao> toutiaos;
 
 	@ViewInject(R.id.lv_news_list)
 	ListView lvNews;
@@ -39,6 +42,7 @@ public class ToutiaoFragment extends Fragment {
 			// x×¢½â
 			x.view().inject(this, view);
 			model = new NewsModel();
+			toutiaos = new ArrayList<Toutiao>();
 			newTop = new News();
 			setadapter();
 			setListeners();
@@ -62,7 +66,7 @@ public class ToutiaoFragment extends Fragment {
 	}
 
 	private void setadapter() {
-		String top = "top";
+		String top = "yule";
 		model.getToutiao(top, new NewsCallBack() {
 
 			@Override
