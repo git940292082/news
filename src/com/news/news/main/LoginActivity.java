@@ -154,8 +154,6 @@ public class LoginActivity extends Activity {
 	}
 	private void onClickLogin() {
 		if (!mQQAuth.isSessionValid()) {
-			startActivity(new Intent(LoginActivity.this, MainActivity.class));
-			finish();
 			IUiListener listener = new BaseUiListener() {
 				@Override
 				protected void doComplete(JSONObject values) {
@@ -311,6 +309,8 @@ public class LoginActivity extends Activity {
 					try {
 						Log.i("name",response.getString("nickname")); 
 						App.user.setUser(response.getString("nickname"));
+						startActivity(new Intent(LoginActivity.this, MainActivity.class));
+						finish();
 					} catch (JSONException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
