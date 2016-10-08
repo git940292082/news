@@ -9,12 +9,13 @@ public class UrlUntils {
 		return url;
 	}
 
-	public static String getTalkUrl() {
-		String url = "http://v.juhe.cn/joke/randJoke.php?key=038af288ef6adda3c5c52193161e918d";
+	
+	public static String getTalkUrl(){
+		String url="http://v.juhe.cn/joke/randJoke.php?key=038af288ef6adda3c5c52193161e918d";
 		return url;
 	}
-
-	public static String getLuckUrl(String name) {
+	
+	public static String getLuckUrl(String name){
 		try {
 			name = URLEncoder.encode(name, "UTF-8");
 		} catch (UnsupportedEncodingException e) {
