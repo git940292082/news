@@ -49,6 +49,7 @@ public class VideoAdapter  extends MyAdapter<Video>{
 		load(holder,video);
 		return layout;
 	}
+	
 	private void load(final Holder holder, final Video video) {
 		// TODO Auto-generated method stub
 		holder.tvTitle.setText(video.getTitle());
@@ -118,7 +119,6 @@ public class VideoAdapter  extends MyAdapter<Video>{
 				}
 			}
 		});
-
 		holder.vvVideo.setOnPreparedListener(new OnPreparedListener() {
 			@Override
 			public void onPrepared(MediaPlayer mp) {

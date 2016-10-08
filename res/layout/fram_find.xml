@@ -10,59 +10,12 @@
         android:orientation="vertical"
         android:padding="20dp" >
 
-        <!-- 新闻快讯 -->
-
-        <RelativeLayout
-            android:id="@+id/find_news_title"
-            android:layout_width="match_parent"
-            android:layout_height="350dp"
-            android:layout_marginBottom="20dp"
-            android:background="#ccc"
-            android:padding="1dp"
-            android:paddingBottom="2dp" >
-
-            <TextView
-                android:id="@+id/find_news_tv_title"
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:background="#fff"
-                android:gravity="center"
-                android:paddingLeft="20dp"
-                android:text="新闻快讯"
-                android:textColor="#666"
-                android:textSize="14sp"
-                android:textStyle="bold|italic" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_toRightOf="@+id/find_news_tv_title"
-                android:background="#fff" />
-
-            <View
-                android:id="@+id/find_news_line"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_below="@+id/find_news_tv_title"
-                android:background="@color/Conlor.Main" />
-
-            <android.support.v4.view.ViewPager
-                android:id="@+id/fram_find_imgPage"
-                android:layout_width="match_parent"
-                android:layout_height="300dp"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentLeft="true"
-                android:layout_below="@+id/find_news_line"
-                android:background="#fff" >
-            </android.support.v4.view.ViewPager>
-        </RelativeLayout>
-
         <!-- 开心一笑 -->
 
         <RelativeLayout
             android:id="@+id/find_joke_title"
             android:layout_width="match_parent"
-            android:layout_height="300dp"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
             android:background="#ccc"
             android:padding="1dp"
@@ -77,8 +30,7 @@
                 android:paddingLeft="20dp"
                 android:text="开心一笑"
                 android:textColor="#666"
-                android:textSize="14sp"
-                android:textStyle="bold|italic" />
+                android:textSize="14sp" />
 
             <View
                 android:layout_width="match_parent"
@@ -94,18 +46,20 @@
                 android:background="@color/Conlor.Main" />
 
             <TextView
-                android:id="@+id/fram_find_imgPage"
+                android:id="@+id/find_jock_tvTalk"
                 android:layout_width="match_parent"
-                android:layout_height="250dp"
+                android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentLeft="true"
                 android:layout_below="@+id/find_joke_line"
                 android:background="#eee"
+                android:minHeight="250dp"
                 android:padding="20dp"
                 android:textSize="18sp" >
             </TextView>
 
             <ImageButton
+                android:id="@+id/find_jock_img"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_alignParentBottom="true"
@@ -122,7 +76,7 @@
         <RelativeLayout
             android:id="@+id/find_luck_title"
             android:layout_width="match_parent"
-            android:layout_height="300dp"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
             android:background="#ccc"
             android:padding="1dp"
@@ -137,8 +91,7 @@
                 android:paddingLeft="20dp"
                 android:text="星座运势"
                 android:textColor="#666"
-                android:textSize="14sp"
-                android:textStyle="bold|italic" />
+                android:textSize="14sp" />
 
             <View
                 android:layout_width="match_parent"
@@ -146,6 +99,7 @@
                 android:layout_toLeftOf="@+id/find_luck_sp"
                 android:layout_toRightOf="@+id/find_luck_tv_title"
                 android:background="#fff" />
+
             <View
                 android:id="@+id/find_luck_line"
                 android:layout_width="match_parent"
@@ -153,31 +107,203 @@
                 android:layout_below="@+id/find_luck_tv_title"
                 android:background="@color/Conlor.Main" />
 
-            <TextView
-                android:id="@+id/fram_find_imgPage"
-                android:layout_width="match_parent"
-                android:layout_height="250dp"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentLeft="true"
-                android:layout_below="@+id/find_luck_line"
-                android:background="#eee"
-                android:padding="20dp"
-                android:textSize="18sp" >
-            </TextView>
-
             <Spinner
-                android:id="@+id/find_luck_sp"
+                android:id="@+id/luck_luck_sp"
                 android:layout_width="80dp"
                 android:layout_height="40dp"
-                android:spinnerMode="dropdown"
                 android:layout_above="@+id/find_luck_line"
                 android:layout_alignParentRight="true"
                 android:background="@drawable/ic_find_sp_bg"
+                android:entries="@array/find_sp_luck"
                 android:gravity="left"
-                android:entries="@array/find_sp_luck" />
+                android:spinnerMode="dropdown" />
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/find_luck_line" >
 
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp" 
+                    >
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="1dp"
+                        android:layout_weight="1"
+                        android:background="#fff"
+                        android:gravity="center"
+                        android:paddingTop="10dp"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
+                        android:paddingBottom="10dp"
+                        android:text="综合运势"
+                        android:textStyle="bold"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/luck_all"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="1dp"
+                        android:layout_weight="1"
+                        android:background="#fff"
+                        android:gravity="center"
+                        android:padding="4dp"
+                        android:textColor="@color/Conlor.Main"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="1dp"
+                        android:layout_weight="1"
+                        android:background="#fff"
+                        android:gravity="center"
+                        android:padding="4dp"
+                        android:text="幸运颜色"
+                       android:textStyle="bold"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/luck_color"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="#fff"
+                        android:gravity="center"
+                        android:padding="4dp"
+                        android:textColor="@color/Conlor.Main"
+                        android:textSize="12sp" 
+                        />
+
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp" 
+                    >
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="1dp"
+                        android:layout_weight="1"
+                        android:background="#fff"
+                        android:gravity="center"
+                        android:paddingBottom="10dp"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
+                        android:paddingTop="10dp"
+                        android:text="健康状况"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/luck_health"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="1dp"
+                        android:layout_weight="1"
+                        android:background="#fff"
+                        android:gravity="center"
+                        android:padding="4dp"
+                        android:textColor="@color/Conlor.Main"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="1dp"
+                        android:layout_weight="1"
+                        android:background="#fff"
+                        android:gravity="center"
+                        android:padding="4dp"
+                        android:text="幸运数字"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/luck_number"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="#fff"
+                        android:gravity="center"
+                        android:padding="4dp"
+                        android:textColor="@color/Conlor.Main"
+                        android:textSize="12sp" />
+
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp" 
+                    >
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="1dp"
+                        android:layout_weight="1"
+                        android:background="#fff"
+                        android:gravity="center"
+                        android:paddingBottom="10dp"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
+                        android:paddingTop="10dp"
+                        android:text="恋爱指数"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/luck_love"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="1dp"
+                        android:layout_weight="1"
+                        android:background="#fff"
+                        android:gravity="center"
+                        android:padding="4dp"
+                        android:textColor="@color/Conlor.Main"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="1dp"
+                        android:layout_weight="1"
+                        android:background="#fff"
+                        android:gravity="center"
+                        android:padding="4dp"
+                        android:text="配的星座"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/luck_QFriend"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="#fff"
+                        android:gravity="center"
+                        android:padding="4dp"
+                        android:textColor="@color/Conlor.Main"
+                        android:textSize="12sp" />
+
+                </TableRow>
+
+                <TextView
+                    android:id="@+id/luck_summary"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="1dp"
+                    android:background="#eee"
+                    android:padding="20dp" />
+
+            </TableLayout>
         </RelativeLayout>
-
     </LinearLayout>
 
 </ScrollView>
