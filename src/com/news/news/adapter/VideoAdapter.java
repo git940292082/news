@@ -11,11 +11,13 @@ import android.net.Uri;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.view.ViewGroup.LayoutParams;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.SeekBar;
+import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.VideoView;
@@ -27,7 +29,7 @@ import com.news.news.R;
 import com.news.news.entity.Video;
 import com.news.news.untils.BitmapUtils;
 import com.news.news.untils.DateTimeUtils;
-public class VideoAdapter  extends MyAdapter<Video>{
+public class VideoAdapter  extends MyAdapter<Video> {
 
 	public VideoAdapter(Context context, List<Video> data) {
 		super(context, data);
@@ -59,7 +61,7 @@ public class VideoAdapter  extends MyAdapter<Video>{
 		holder.imgBg.setVisibility(View.VISIBLE);
 		holder.imPlay.setImageResource(R.drawable.ic_video_play);
 		try {
-			BitmapUtils.loadBitmap(video.getCover(), holder.imgBg);
+			BitmapUtils.loadBitmap(video.getCover(), holder);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -135,28 +137,49 @@ public class VideoAdapter  extends MyAdapter<Video>{
 						// 获得当前播放时间和当前视频的长度
 						currentPosition = holder.vvVideo.getCurrentPosition();
 						duration = holder.vvVideo.getDuration(); 
-						int time = ((currentPosition * 100) / duration);
 						// 设置进度条的主要进度，表示当前的播放时间
 						holder.tvNowTime.setText(DateTimeUtils.getDateFormat(currentPosition));
-						holder.skVideo.setProgress(time);
+						holder.skVideo.setProgress(currentPosition);
 						// 设置进度条的次要进度，表示视频的缓冲进度
+						double p=percent;
+						p=p/100;
+						percent=(int) (p*currentPosition);
 						holder.skVideo.setSecondaryProgress(percent);
 					}
 				});
 			}
 		});
+		holder.skVideo.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
+			@Override
+			public void onStopTrackingTouch(SeekBar seekBar) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void onStartTrackingTouch(SeekBar seekBar) {
+				// TODO Auto-generated method stub
+				holder.vvVideo.seekTo(seekBar.getProgress());
+			}
+			
+			@Override
+			public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
 	}
-	class Holder{
-		Button btRlVisi;
-		TextView tvTitle;
-		VideoView vvVideo;
-		ImageView imPlay;
-		TextView tvNowTime;
-		TextView tvSumTime;
-		SeekBar skVideo;
-		ProgressBar pvCache;
-		RelativeLayout rlBar;
-		ImageView imgBg;
+	public class Holder{
+		public Button btRlVisi;
+		public TextView tvTitle;
+		public VideoView vvVideo;
+		public ImageView imPlay;
+		public TextView tvNowTime;
+		public TextView tvSumTime;
+		public SeekBar skVideo;
+		public ProgressBar pvCache;
+		public RelativeLayout rlBar;
+		public ImageView imgBg;
 		boolean isload;
 		boolean isplay;
 		public Holder(View layout) {

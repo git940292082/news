@@ -12,7 +12,7 @@ public class DBOpenHelper extends SQLiteOpenHelper {
   
 	@Override
 	public void onCreate(SQLiteDatabase db) {
-		// 瑜版挸鍨卞鐑樻殶閹诡喖绨遍弮璁圭礉閸掓稑缂撻崙鐑樻殶閹诡喛銆�		
+		// 鐟滅増鎸搁崹鍗烆嚈閻戞ɑ娈堕柟璇″枛缁ㄩ亶寮拋鍦闁告帗绋戠紓鎾诲礄閻戞ɑ娈堕柟璇″枦閵嗭拷		
 		String sql = "CREATE TABLE users ("
 				+ "_id INTEGER PRIMARY KEY AUTOINCREMENT, "
 				+"_user VARCHAR(16) NOT NULL,"
@@ -31,7 +31,6 @@ public class DBOpenHelper extends SQLiteOpenHelper {
 
 	@Override
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-		// 瑜版挻鏆熼幑顔肩氨閻楀牊婀伴崡鍥╅獓閺冨灈锟斤腹锟斤拷
+		// 鐟滅増鎸婚弳鐔煎箲椤旇偐姘ㄩ柣妤�墛濠�即宕￠崶鈺呯崜闁哄啫鐏堥敓鏂よ吂閿熸枻鎷�	}
 	}
-
 }

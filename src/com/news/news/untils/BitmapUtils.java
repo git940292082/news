@@ -5,7 +5,10 @@ import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
+
+import com.news.news.adapter.VideoAdapter;
 import com.news.news.app.App;
+
 import android.annotation.TargetApi;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -13,11 +16,12 @@ import android.graphics.Bitmap.CompressFormat;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.util.Log;
+import android.view.ViewGroup.LayoutParams;
 import android.widget.ImageView;
 public class BitmapUtils  {
 	public static Map<ImageView, AsyncTask<String, String, Bitmap>> mapAsy=new HashMap<ImageView, AsyncTask<String,String,Bitmap>>();
-	public static void loadBitmap(final String url,final ImageView imgBg){
-		AsyncTask<String, String, Bitmap> task = mapAsy.get(imgBg);
+	public static void loadBitmap(final String url,final  VideoAdapter.Holder holder){
+		AsyncTask<String, String, Bitmap> task = mapAsy.get(holder.imgBg);
 		if(task!=null){
 			Log.i("123", "取消取消取消取消取消取消取消取消取消取消取消取消取消取消取消取消取消");
 			task.cancel(true);
@@ -46,15 +50,20 @@ public class BitmapUtils  {
 			}
 			@TargetApi(Build.VERSION_CODES.JELLY_BEAN)
 			protected void onPostExecute(Bitmap result) {
-				if(result!=null){
-					imgBg.setImageBitmap(result);
+				try {
+					holder.imgBg.setImageBitmap(result);
+					LayoutParams params=holder.imgBg.getLayoutParams();
+					holder.vvVideo.setLayoutParams(params);
+				} catch (Exception e) {
+					// TODO: handle exception
+					e.printStackTrace();
 				}
 			}
 		};
 		task.execute();
-		mapAsy.put(imgBg, task);
+		mapAsy.put(holder.imgBg, task);
 	}
-	
+
 	public static void saveBitmap(Bitmap b,File file) throws Exception{
 		if(!file.getParentFile().exists()){
 			file.getParentFile().mkdirs();
@@ -71,4 +80,6 @@ public class BitmapUtils  {
 		Bitmap b=BitmapFactory.decodeFile(file.getAbsolutePath());
 		return b;
 	}
+
+
 }

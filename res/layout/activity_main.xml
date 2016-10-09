@@ -19,10 +19,11 @@
             android:paddingBottom="10dp"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
-            android:text="☛　新闻　"
+            android:text="  新闻  "
             android:textColor="#fff"
             android:textSize="16sp"
-            android:textStyle="italic|bold" />
+            android:textStyle="bold" 
+            />
     </RelativeLayout>
 
     <com.news.news.ui.MyFramPage
