@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="10dp"
+    android:background="@drawable/ic_window_bg" >
+    <Button
+        
+        android:id="@+id/windos_shao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:padding="10dp"
+        android:text="骚一骚"
+        android:textSize="18sp"
+        android:textColor="#666"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/windos_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:padding="10dp"
+        android:text="退出"
+        android:textSize="18sp"
+        android:textColor="#666"
+        android:textStyle="bold" />
+</LinearLayout>
