@@ -22,7 +22,6 @@ public class FindModel {
 	public void  loadTalk(final ILoadDataCallback callback){
 		final String url=UrlUntils.getTalkUrl();
 		StringRequest request=new StringRequest(url,new Listener<String>() {
-
 			@Override
 			public void onResponse(String response) {
 				// TODO Auto-generated method stub
@@ -54,7 +53,7 @@ public class FindModel {
 		});
 		App.getmQueue().add(request);
 	}
-	public void loadLuck(String name,final ILoadDataCallback callback){
+	public void loadLuck(String name,final ILoadDataCallback callback,final Class<?> class1){
 		String url=UrlUntils.getLuckUrl(name);
 		Log.i("loadLuck", url);
 		StringRequest request=new StringRequest(url,new Listener<String>() {
@@ -67,7 +66,7 @@ public class FindModel {
 					int code = jsonObject.getInt("error_code");
 					if(code==0){
 						Gson gson=new Gson();
-						Luck luck=gson.fromJson(response,Luck.class);
+						Luck luck=(Luck) gson.fromJson(response,class1);
 						callback.ok(luck);
 					}
 					
@@ -82,7 +81,6 @@ public class FindModel {
 			@Override
 			public void onErrorResponse(VolleyError error) {
 				// TODO Auto-generated method stub
-				
 			}
 		});
 		App.getmQueue().add(request);

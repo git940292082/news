@@ -47,6 +47,6 @@ public class FindTalkPresenter {
 				// TODO Auto-generated method stub
 				
 			}
-		});
+		}, Luck.class);
 	}
 }

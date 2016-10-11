@@ -3,6 +3,7 @@ package com.news.news.model.impl;
 import java.util.List;
 
 
+
 import com.android.volley.Response.ErrorListener;
 import com.android.volley.Response.Listener;
 import com.android.volley.RequestQueue;
@@ -55,7 +56,6 @@ public class FunnyModelimpl implements FunnyModel {
 
 //						Log.i("Funny", "response=" + response);
 						// 1.通过 日志 -->数据获取成功
-
 						// 2.解析获取到的响应数据
 						Gson gson = new Gson();
 						Funny resp = gson.fromJson(response, Funny.class);

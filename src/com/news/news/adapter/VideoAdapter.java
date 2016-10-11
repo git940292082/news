@@ -3,6 +3,7 @@ package com.news.news.adapter;
 import java.util.List;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnBufferingUpdateListener;
@@ -26,6 +27,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.ImageLoader.ImageCache;
 import com.news.news.R;
+import com.news.news.VideoPlayActivity;
 import com.news.news.entity.Video;
 import com.news.news.untils.BitmapUtils;
 import com.news.news.untils.DateTimeUtils;
@@ -80,10 +82,11 @@ public class VideoAdapter  extends MyAdapter<Video> {
 						holders.isplay=false;
 						holders.isload=false;
 					}
-					String url=video.getMp4Hd_url();
+					
 					holder.imPlay.setImageResource(R.drawable.ic_video_pause);
 					holder.imPlay.setVisibility(View.GONE); 
 					holder.pvCache.setVisibility(View.VISIBLE); 
+					String url=video.getMp4Hd_url();
 					if(url==null||url.equals("")||url.equals("null")){
 						url=video.getMp4_url();
 					}
@@ -163,11 +166,27 @@ public class VideoAdapter  extends MyAdapter<Video> {
 				holder.vvVideo.seekTo(seekBar.getProgress());
 				holder.vvVideo.start();
 			}
-			
 			@Override
 			public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
 				// TODO Auto-generated method stub
 				holder.tvNowTime.setText(DateTimeUtils.getDateFormat(progress));
+			}
+		});
+		holder.fangda.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Intent intent=new  Intent(getContext(),VideoPlayActivity.class);
+				String url=video.getMp4Hd_url();
+				if(url==null||url.equals("")||url.equals("null")){
+					url=video.getMp4_url();
+				}
+				intent.putExtra("url", url);
+				intent.putExtra("time",holder.vvVideo.getCurrentPosition());
+				holder.vvVideo.pause();
+				holder.imPlay.setImageResource(R.drawable.ic_video_play);
+				holder.imgBg.setVisibility(View.VISIBLE);
+				getContext().startActivity(intent);
 			}
 		});
 	}
@@ -182,6 +201,7 @@ public class VideoAdapter  extends MyAdapter<Video> {
 		public ProgressBar pvCache;
 		public RelativeLayout rlBar;
 		public ImageView imgBg;
+		public ImageView fangda;
 		boolean isload;
 		boolean isplay;
 		public Holder(View layout) {
@@ -195,6 +215,7 @@ public class VideoAdapter  extends MyAdapter<Video> {
 			skVideo=(SeekBar) layout.findViewById(R.id.video_seekbar);
 			imgBg=(ImageView) layout.findViewById(R.id.video_bg);
 			btRlVisi=(Button) layout.findViewById(R.id.video_rl_visi);
+			fangda=(ImageView)layout.findViewById(R.id.video_fangda);
 		}
 	}
 }
