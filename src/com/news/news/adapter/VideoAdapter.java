@@ -35,6 +35,7 @@ public class VideoAdapter  extends MyAdapter<Video> {
 		super(context, data);
 		// TODO Auto-generated constructor stub
 	}
+	
 	private Holder holders;
 	@Override
 	public View getView(int position, View layout, ViewGroup parent) {
@@ -128,6 +129,7 @@ public class VideoAdapter  extends MyAdapter<Video> {
 				holder.imgBg.setVisibility(View.GONE);
 				holder.isload=true;
 				holder.tvSumTime.setText(DateTimeUtils.getDateFormat(holder.vvVideo.getDuration()));
+				holder.skVideo.setMax(holder.vvVideo.getDuration());
 				// TODO Auto-generated method stub
 				mp.setOnBufferingUpdateListener(new OnBufferingUpdateListener() {
 					int currentPosition, duration;
@@ -141,9 +143,7 @@ public class VideoAdapter  extends MyAdapter<Video> {
 						holder.tvNowTime.setText(DateTimeUtils.getDateFormat(currentPosition));
 						holder.skVideo.setProgress(currentPosition);
 						// 设置进度条的次要进度，表示视频的缓冲进度
-						double p=percent;
-						p=p/100;
-						percent=(int) (p*currentPosition);
+						percent=percent*duration/100;
 						holder.skVideo.setSecondaryProgress(percent);
 					}
 				});
@@ -160,12 +160,13 @@ public class VideoAdapter  extends MyAdapter<Video> {
 			public void onStartTrackingTouch(SeekBar seekBar) {
 				// TODO Auto-generated method stub
 				holder.vvVideo.seekTo(seekBar.getProgress());
+				holder.vvVideo.start();
 			}
 			
 			@Override
 			public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
 				// TODO Auto-generated method stub
-				
+				holder.tvNowTime.setText(DateTimeUtils.getDateFormat(progress));
 			}
 		});
 	}

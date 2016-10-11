@@ -24,18 +24,17 @@ public class ForGetPwdActivity1 extends Activity implements View.OnClickListener
     private Button btnAchieve;
     private EditText etUsername;
     private EditText etClass;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forgetpwd1);
-        //设置标题�?-start
-        //标题栏开�?
+        //璁剧疆鏍囬锟�-start
+        //鏍囬鏍忓紑锟�
         title_mid=(TextView)findViewById(R.id.title_mid);
-        title_mid.setText("确认用户信息");
+        title_mid.setText("纭鐢ㄦ埛淇℃伅");
         title_left=(ImageView)findViewById(R.id.title_left);
         title_left.setVisibility(View.VISIBLE);
-        //标题栏结�?
+        //鏍囬鏍忕粨锟�
         title_left.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -43,11 +42,11 @@ public class ForGetPwdActivity1 extends Activity implements View.OnClickListener
                 finish();
             }
         });
-        //设置标题�?-end
+        //璁剧疆鏍囬锟�-end
         btnAchieve = (Button) findViewById(R.id.fgpwd_btn_achieve);
         etUsername = (EditText) findViewById(R.id.fgpwd_et_username);
         etClass = (EditText) findViewById(R.id.fgpwd_et_class);
-        // 5. 为按钮配置监听器
+        // 5. 涓烘寜閽厤缃洃鍚櫒
         btnAchieve.setOnClickListener(this);
     }
 
@@ -57,7 +56,7 @@ public class ForGetPwdActivity1 extends Activity implements View.OnClickListener
         String classs = etClass.getText().toString().trim();
         long a=-1;
         if (username.equals("")){
-            Toast.makeText(getApplicationContext(), "用户名不能为�?", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "鐢ㄦ埛鍚嶄笉鑳戒负锟�", Toast.LENGTH_SHORT).show();
         }else{
             RegLogin_Server server=new RegLogin_Server(getApplicationContext());
             a=server.forGetPwd(username,classs);
@@ -66,7 +65,7 @@ public class ForGetPwdActivity1 extends Activity implements View.OnClickListener
             startActivity(new Intent(getApplicationContext(), ForGetPwdActivity2.class).putExtra("id", a).putExtra("name", username).putExtra("class", classs));
             finish();
         }else{
-            Toast.makeText(getApplicationContext(), "用户名或者邮箱不正确", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "鐢ㄦ埛鍚嶆垨鑰呴偖绠变笉姝ｇ‘", Toast.LENGTH_SHORT).show();
         }
     }
 

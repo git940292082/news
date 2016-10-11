@@ -3,9 +3,6 @@ package com.news.news.main;
 import java.util.ArrayList;
 
 import com.news.news.R;
-import com.news.news.R.id;
-import com.news.news.R.layout;
-import com.news.news.R.menu;
 import com.news.news.fragment.FramFind;
 import com.news.news.fragment.FramFunny;
 import com.news.news.fragment.FramMine;
@@ -13,18 +10,11 @@ import com.news.news.fragment.FramNews;
 import com.news.news.fragment.FramVideo;
 
 import android.os.Bundle;
-import android.app.Activity;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.app.ListFragment;
 import android.support.v4.view.ViewPager;
-import android.support.v4.view.ViewPager.OnPageChangeListener;
-import android.view.Menu;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.RadioGroup.OnCheckedChangeListener;

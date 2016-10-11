@@ -2,7 +2,10 @@ package com.news.news.fragment;
 import java.util.ArrayList;
 import java.util.List;
 
-
+import com.handmark.pulltorefresh.library.ILoadingLayout;
+import com.handmark.pulltorefresh.library.PullToRefreshBase;
+import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener;
+import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.news.news.R;
 import com.news.news.adapter.VideoAdapter;
 import com.news.news.entity.Video;
@@ -11,6 +14,7 @@ import com.news.news.model.VideoModel;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.text.format.DateUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,7 +27,7 @@ import android.widget.ListView;
 
 public class FramVideo extends Fragment {
 	private View view;
-	private ListView lv;
+	private PullToRefreshListView lv;
 	private VideoAdapter adapter;
 	private List<Video> Videos=new ArrayList<Video>();
 	private boolean isResing;
@@ -46,7 +50,12 @@ public class FramVideo extends Fragment {
 	}
 	private void loadView() {
 		// TODO Auto-generated method stub
-		lv=(ListView)view.findViewById(R.id.fram_video_lv);
+		lv=(PullToRefreshListView)view.findViewById(R.id.fram_video_lv);
+		ILoadingLayout startLabelse = lv.getLoadingLayoutProxy(true,false);
+		startLabelse.setPullLabel("下拉刷新");// 刚下拉时，显示的提示
+		startLabelse.setRefreshingLabel("数据加载中...");// 刷新时
+		startLabelse.setReleaseLabel("松开加载数据");// 下来达到一定距离时，显示的提示
+		// 设置列表内容
 	}
 	private void loadListener() {
 		// TODO Auto-generated method stub
@@ -87,6 +96,18 @@ public class FramVideo extends Fragment {
 				}
 			}
 		});
+		lv.setOnRefreshListener(new OnRefreshListener<ListView>() {
+
+			@Override
+			public void onRefresh(PullToRefreshBase<ListView> refreshView) {
+				// TODO Auto-generated method stub
+				String label = DateUtils.formatDateTime(getActivity(), System.currentTimeMillis(),
+						DateUtils.FORMAT_SHOW_TIME | DateUtils.FORMAT_SHOW_DATE | DateUtils.FORMAT_ABBREV_ALL);
+				// Update the LastUpdatedLabel
+				refreshView.getLoadingLayoutProxy().setLastUpdatedLabel(label);
+				loadData();
+			}
+		});
 	}
 	private void loadData() {
 		// TODO Auto-generated method stub
@@ -100,7 +121,7 @@ public class FramVideo extends Fragment {
 				adapter=new VideoAdapter(getActivity(), videos);
 				isResing=true;
 				lv.setAdapter(adapter);
-				
+				lv.onRefreshComplete();
 			}
 		});
 	}
