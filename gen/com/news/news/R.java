@@ -167,8 +167,8 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int ptrSubHeaderTextAppearance=0x7f01000b;
     }
     public static final class color {
-        public static final int Color_Main_a=0x7f080001;
-        public static final int Conlor_Main=0x7f080000;
+        public static final int Color_Main_a=0x7f060001;
+        public static final int Conlor_Main=0x7f060000;
     }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
@@ -182,14 +182,14 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
          screen margins) for sw720dp devices (e.g. 10" tablets) in landscape here.
     
          */
-        public static final int activity_horizontal_margin=0x7f060005;
-        public static final int activity_vertical_margin=0x7f060006;
-        public static final int header_footer_left_right_padding=0x7f060003;
-        public static final int header_footer_top_bottom_padding=0x7f060004;
-        public static final int indicator_corner_radius=0x7f060001;
-        public static final int indicator_internal_padding=0x7f060002;
-        public static final int indicator_right_padding=0x7f060000;
-        public static final int login_btn_ma=0x7f060007;
+        public static final int activity_horizontal_margin=0x7f070000;
+        public static final int activity_vertical_margin=0x7f070001;
+        public static final int header_footer_left_right_padding=0x7f070006;
+        public static final int header_footer_top_bottom_padding=0x7f070007;
+        public static final int indicator_corner_radius=0x7f070004;
+        public static final int indicator_internal_padding=0x7f070005;
+        public static final int indicator_right_padding=0x7f070003;
+        public static final int login_btn_ma=0x7f070002;
     }
     public static final class drawable {
         public static final int back=0x7f020000;
@@ -405,25 +405,24 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int news_web=0x7f0b0002;
     }
     public static final class string {
-        public static final int action_settings=0x7f070007;
-        public static final int app_name=0x7f070006;
-        public static final int email=0x7f07000a;
-        public static final int hello_world=0x7f070008;
-        public static final int login_main=0x7f07000d;
-        public static final int password=0x7f07000b;
+        public static final int action_settings=0x7f080007;
+        public static final int app_name=0x7f080006;
+        public static final int email=0x7f08000a;
+        public static final int hello_world=0x7f080008;
+        public static final int login_main=0x7f08000d;
+        public static final int password=0x7f08000b;
         /**  Just use standard Pull Down String when pulling up. These can be set for languages which require it 
- Just use standard Pull Down String when pulling up. These can be set for languages which require it 
          */
-        public static final int pull_to_refresh_from_bottom_pull_label=0x7f070003;
-        public static final int pull_to_refresh_from_bottom_refreshing_label=0x7f070005;
-        public static final int pull_to_refresh_from_bottom_release_label=0x7f070004;
-        public static final int pull_to_refresh_pull_label=0x7f070000;
-        public static final int pull_to_refresh_refreshing_label=0x7f070002;
-        public static final int pull_to_refresh_release_label=0x7f070001;
-        public static final int repassword=0x7f07000c;
-        public static final int title_activity_funny_fragment__item__to_=0x7f07000e;
-        public static final int title_activity_news_web=0x7f07000f;
-        public static final int username=0x7f070009;
+        public static final int pull_to_refresh_from_bottom_pull_label=0x7f080003;
+        public static final int pull_to_refresh_from_bottom_refreshing_label=0x7f080005;
+        public static final int pull_to_refresh_from_bottom_release_label=0x7f080004;
+        public static final int pull_to_refresh_pull_label=0x7f080000;
+        public static final int pull_to_refresh_refreshing_label=0x7f080002;
+        public static final int pull_to_refresh_release_label=0x7f080001;
+        public static final int repassword=0x7f08000c;
+        public static final int title_activity_funny_fragment__item__to_=0x7f08000e;
+        public static final int title_activity_news_web=0x7f08000f;
+        public static final int username=0x7f080009;
     }
     public static final class style {
         /** 

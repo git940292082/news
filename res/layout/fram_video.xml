@@ -11,7 +11,9 @@
         android:divider="@null"
         android:scrollbars="@null"
         animation:ptrDrawableStart="@drawable/ic_finish_j"
-        animation:ptrHeaderSubTextColor="#f73a56" >
+        animation:ptrHeaderSubTextColor="#f73a56" 
+        animation:ptrHeaderBackground="#fff"
+        >
     </com.handmark.pulltorefresh.library.PullToRefreshListView>
 
 </RelativeLayout>

@@ -78,6 +78,7 @@ public class VideoAdapter  extends MyAdapter<Video> {
 						holders.imgBg.setVisibility(View.VISIBLE);
 						holders.vvVideo.stopPlayback();
 						holders.isplay=false;
+						holders.isload=false;
 					}
 					String url=video.getMp4Hd_url();
 					holder.imPlay.setImageResource(R.drawable.ic_video_pause);

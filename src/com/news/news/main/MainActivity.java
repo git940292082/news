@@ -17,6 +17,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.RadioGroup.OnCheckedChangeListener;
 public class MainActivity extends FragmentActivity implements OnCheckedChangeListener{
 
@@ -102,5 +103,16 @@ public class MainActivity extends FragmentActivity implements OnCheckedChangeLis
 			break;
 		}
 	}
-	
+	long currentTime;
+	@Override
+	public void onBackPressed() {
+		// TODO Auto-generated method stub
+		currentTime=System.currentTimeMillis()-currentTime;
+		if(currentTime<2000){
+			finish();
+		}else{
+			Toast.makeText(this, "再按一次退出程序", Toast.LENGTH_SHORT).show();
+			currentTime=System.currentTimeMillis();
+		}
+	}
 }
