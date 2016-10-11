@@ -27,8 +27,8 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.ImageLoader.ImageCache;
 import com.news.news.R;
-import com.news.news.VideoPlayActivity;
 import com.news.news.entity.Video;
+import com.news.news.main.VideoPlayActivity;
 import com.news.news.untils.BitmapUtils;
 import com.news.news.untils.DateTimeUtils;
 public class VideoAdapter  extends MyAdapter<Video> {

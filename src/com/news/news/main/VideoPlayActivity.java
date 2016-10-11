@@ -1,8 +1,12 @@
-package com.news.news;
+package com.news.news.main;
 
 import org.xutils.x;
 import org.xutils.view.annotation.ViewInject;
 
+import com.news.news.R;
+import com.news.news.R.drawable;
+import com.news.news.R.id;
+import com.news.news.R.layout;
 import com.news.news.untils.DateTimeUtils;
 
 import android.media.MediaPlayer;

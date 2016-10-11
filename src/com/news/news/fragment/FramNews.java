@@ -106,7 +106,6 @@ public class FramNews extends Fragment {
 		public Fragment getItem(int arg0) {
 			return newsFragments.get(arg0);
 		}
-
 		@Override
 		public int getCount() {
 			return newsFragments.size();
