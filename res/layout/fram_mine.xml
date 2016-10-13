@@ -2,12 +2,248 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#ccc"
     android:orientation="vertical" >
 
+    <!-- 标题项 -->
+
+    <RelativeLayout
+        android:id="@+id/rl_mine_title"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="#31C27C" >
+
+        <com.news.news.ui.CircleImageView
+            android:id="@+id/Ci_image"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/ic_launcher" />
+
+        <Button
+            android:id="@+id/btn_login_mine"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Ci_image"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/button_border"
+            android:text="点 击 登 录"
+            android:textColor="#E61A5F"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/btn_regist_mine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_margin="10dp"
+            android:background="@drawable/button_border"
+            android:text="注册"
+            android:textColor="#E61A5F"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_sign_mine"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="0.5dp"
+        android:layout_weight="1"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/iv_sign_mine"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:background="#eeeeee"
+            android:padding="10dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/sign" />
+
+        <TextView
+            android:id="@+id/tv_signcenter"
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="0.5dp"
+            android:background="#eeeeee"
+            android:gravity="center|left"
+            android:text="签到中心"
+            android:textColor="#555555"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/btn_sign"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="0.5dp"
+            android:layout_weight="1"
+            android:background="#eeeeee"
+            android:text="签到"
+            android:textColor="#555555"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_mycoin_mine"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="10dp"
+        android:layout_weight="1" >
+
+        <ImageView
+            android:id="@+id/iv_mycoin_mine"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:background="#eeeeee"
+            android:padding="10dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/mycoin" />
+
+        <TextView
+            android:id="@+id/tv_mycoin_mine"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="0.5dp"
+            android:background="#eeeeee"
+            android:gravity="center|left"
+            android:text="我的金币"
+            android:textColor="#555555"
+            android:textSize="18sp" />
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#eeeeee" >
+
+            <TextView
+                android:id="@+id/tv_coinnumber_mine"
+                android:layout_width="90dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@+id/iv_coin"
+                android:background="@drawable/shape_coinnumber"
+                android:padding="5dp" />
+
+            <ImageView
+                android:id="@+id/iv_coin"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/tv_coinnumber_mine"
+                android:background="@drawable/shape_coinimage"
+                android:padding="5dp"
+                android:src="@drawable/coin" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_collection_mine"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="0.5dp"
+        android:layout_weight="1" >
+
+        <ImageView
+            android:id="@+id/iv_collection_mine"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:background="#eeeeee"
+            android:padding="10dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/collection" />
+
+        <TextView
+            android:id="@+id/tv_collection_mine"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="0.5dp"
+            android:background="#eeeeee"
+            android:gravity="center|left"
+            android:text="我的收藏"
+            android:textColor="#555555"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_footprint_mine"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="10dp"
+        android:layout_weight="1" >
+
+        <ImageView
+            android:id="@+id/iv_footprint_mine"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:background="#eeeeee"
+            android:padding="10dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/footprint" />
+
+        <TextView
+            android:id="@+id/tv_footprint_mine"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="0.5dp"
+            android:background="#eeeeee"
+            android:gravity="center|left"
+            android:text="阅读足迹"
+            android:textColor="#555555"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_nightmode_mine"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="0.5dp"
+        android:layout_weight="1" 
+        android:orientation="horizontal"
+        >
+
+        <ImageView
+            android:id="@+id/iv_nightmode_mine"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:background="#eeeeee"
+            android:padding="10dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/nightmode" />
+
+        <TextView
+            android:id="@+id/tv_nightmode_mine"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="0.5dp"
+            android:background="#eeeeee"
+            android:gravity="center|left"
+            android:text="夜间模式"
+            android:textColor="#555555"
+            android:textSize="18sp" />
+
+        <ToggleButton
+            android:id="@+id/btn_shift_nightmode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textOff="白天"
+            android:textOn="夜间" />
+    </LinearLayout>
+
     <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
+        android:id="@+id/tv_setting_mine"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="3" />
+        android:layout_marginLeft="0.5dp"
+        android:background="#fff"
+        android:gravity="center"
+        android:padding="20dp"
+        android:text="退出"
+        android:textColor="#555555"
+        android:textSize="18sp" />
 
 </LinearLayout>
