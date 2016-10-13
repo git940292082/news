@@ -23,10 +23,13 @@ public class NewsWebActivity extends Activity {
 		
 		x.view().inject(this);
 		
-		
 		Intent intent=getIntent();
 		news=(Toutiao) intent.getSerializableExtra("news");
-		wvNews.loadUrl(news.getUrl());
+		String url = news.getUrl();
+		if(news==null){
+			url=intent.getStringExtra("url");
+		}
+		wvNews.loadUrl(url);
 	}
 
 }

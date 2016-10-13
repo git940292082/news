@@ -2,4 +2,6 @@
 <resources>
     <color name="Conlor.Main" >#f73a56 </color>
     <color name="Color.Main.a">#888</color>
+      <color name="dingbu_ban_touming">#e0333333</color>
+      <color name="white">#ffffffff</color>
 </resources>
