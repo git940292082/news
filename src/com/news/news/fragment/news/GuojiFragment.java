@@ -7,10 +7,10 @@ import org.xutils.x;
 import org.xutils.view.annotation.ViewInject;
 
 import com.news.news.R;
+import com.news.news.activity.NewsWebActivity;
 import com.news.news.adapter.NewsAdapter;
 import com.news.news.entity.news.News;
 import com.news.news.entity.news.Toutiao;
-import com.news.news.main.NewsWebActivity;
 import com.news.news.model.INewsModel;
 import com.news.news.model.NewsCallBack;
 import com.news.news.model.impl.NewsModel;

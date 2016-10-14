@@ -16,9 +16,9 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
 import com.news.news.R;
+import com.news.news.activity.FunnyFragment_Item_To_Activity;
 import com.news.news.adapter.FunnyAdapter;
 import com.news.news.entity.FunnyItem;
-import com.news.news.main.FunnyFragment_Item_To_Activity;
 import com.news.news.presenter.FunnyPresenterimpl;
 import com.news.news.view.FunnyView;
 

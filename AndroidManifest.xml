@@ -28,11 +28,10 @@
         android:label="@string/app_name"
         android:theme="@android:style/Theme.Light.NoTitleBar" >
         <activity
-            android:name="com.news.news.main.MainActivity"
+            android:name="com.news.news.activity.MainActivity"
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/app_name"
-            android:screenOrientation="nosensor"
-             >
+            android:screenOrientation="nosensor" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -40,27 +39,27 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.news.news.main.LoginActivity"
+            android:name="com.news.news.activity.LoginActivityvity"
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name="com.news.news.main.RegisterActivity"
+            android:name="com.news.news.activity.RegisterActivity"
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name="com.news.news.main.NewsWebActivity"
+            android:name="com.news.news.activity.NewsWebActivity"
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name="com.news.news.main.ForGetPwdActivity1"
+            android:name="com.news.news.activity.ForGetPwdActivity"
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name="com.news.news.main.ForGetPwdActivity2"
+            android:name="com.news.news.activity.ForGetPwdActivity2"
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name="com.news.news.main.FunnyFragment_Item_To_Activity"
+            android:name="com.news.news.activity.FunnyFragment_Item_To_Activity"
             android:label="@string/title_activity_funny_fragment__item__to_" >
         </activity>
         <activity
@@ -85,7 +84,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.news.news.main.VideoPlayActivity"
+            android:name="com.news.news.activity.VideoPlayActivity"
             android:label="@string/title_activity_video_play"
             android:screenOrientation="landscape" >
         </activity>
