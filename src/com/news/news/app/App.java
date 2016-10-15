@@ -6,12 +6,10 @@ import org.xutils.x;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
 import com.news.news.entity.User;
-
 import android.app.Application;
 import android.content.Context;
+import android.graphics.Bitmap;
 public class App  extends Application{
-	
-	
 	
 	public static Context context;
     public static User user=new User();
@@ -26,9 +24,6 @@ public class App  extends Application{
 		context =getApplicationContext();
 		x.Ext.init(this);
 		super.onCreate();
-		
-		
-		
 		
 		/**
 		 * Shark Z 
@@ -48,7 +43,5 @@ public class App  extends Application{
 	public static RequestQueue getmQueue(){
 		return mQueue;
 	}
-	
-	
 	
 }

@@ -19,6 +19,33 @@ public final class R {
         public static final int find_sp_luck=0x7f090000;
     }
     public static final class attr {
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int freezesAnimation=0x7f010017;
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+         */
+        public static final int gifSource=0x7f010015;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int isOpaque=0x7f010016;
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+         */
+        public static final int mainbackground=0x7f010013;
         /**  BELOW HERE ARE DEPRECEATED. DO NOT USE. 
          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
@@ -34,7 +61,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <colgroup align="left" />
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
 <tr><td><code>rotate</code></td><td>0x0</td><td></td></tr>
-<tr><td><code>flip</code></td><td>0x1</td><td> flip（翻转动画）， rotate（旋转动画）  </td></tr>
+<tr><td><code>flip</code></td><td>0x1</td><td> flip（翻转动画）， rotate（旋转动画） </td></tr>
 </table>
          */
         public static final int ptrAnimationStyle=0x7f01000c;
@@ -55,7 +82,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
          */
         public static final int ptrDrawableEnd=0x7f010008;
         /**  Drawable to use as Loading Indicator in the Header View. Overrides value set in ptrDrawable. 
- 头部视图的图标
+ 头部视图的图标 
          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
@@ -65,7 +92,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
          */
         public static final int ptrDrawableTop=0x7f010011;
         /**  A drawable to use as the background of the Header and Footer Loading Views 
-  设置下拉Header或者上拉Footer的背景色 
+ 设置下拉Header或者上拉Footer的背景色 
          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
 <p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
@@ -94,7 +121,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
          */
         public static final int ptrHeaderTextColor=0x7f010002;
-        /**   
+        /** 
             Whether PullToRefreshListView has it's extras enabled. This allows the user to be   
             able to scroll while refreshing, and behaves better. It acheives this by adding  
             Header and/or Footer Views to the ListView.  
@@ -137,7 +164,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
          */
         public static final int ptrRefreshableViewBackground=0x7f010000;
-        /**   
+        /** 
             Whether the Drawable should be continually rotated as you pull. This only  
             takes effect when using the 'Rotate' Animation Style.  
         
@@ -165,11 +192,18 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static final int ptrSubHeaderTextAppearance=0x7f01000b;
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+         */
+        public static final int settingbackground=0x7f010014;
     }
     public static final class color {
         public static final int Color_Main_a=0x7f060001;
         public static final int Conlor_Main=0x7f060000;
         public static final int dingbu_ban_touming=0x7f060002;
+        public static final int night=0x7f060004;
         public static final int white=0x7f060003;
     }
     public static final class dimen {
@@ -194,88 +228,89 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int login_btn_ma=0x7f070002;
     }
     public static final class drawable {
-        public static final int back=0x7f020000;
-        public static final int banner_dian_blur=0x7f020001;
-        public static final int banner_dian_focus=0x7f020002;
-        public static final int bar=0x7f020003;
-        public static final int button_border=0x7f020004;
-        public static final int cicle_banner_dian_blur=0x7f020005;
-        public static final int cicle_banner_dian_focus=0x7f020006;
-        public static final int coin=0x7f020007;
-        public static final int collection=0x7f020008;
-        public static final int default_ptr_flip=0x7f020009;
-        public static final int default_ptr_rotate=0x7f02000a;
-        public static final int footprint=0x7f02000b;
-        public static final int ic_bar=0x7f02000c;
-        public static final int ic_bp=0x7f02000d;
-        public static final int ic_chat_check=0x7f02000e;
-        public static final int ic_chat_uncheck=0x7f02000f;
-        public static final int ic_empty=0x7f020010;
-        public static final int ic_error=0x7f020011;
-        public static final int ic_find_check=0x7f020012;
-        public static final int ic_find_flash=0x7f020013;
-        public static final int ic_find_sp_bg=0x7f020014;
-        public static final int ic_find_uncheck=0x7f020015;
-        public static final int ic_finish_bg=0x7f020016;
-        public static final int ic_finish_d=0x7f020017;
-        public static final int ic_finish_j=0x7f020018;
-        public static final int ic_funny_check=0x7f020019;
-        public static final int ic_funny_uncheck=0x7f02001a;
-        public static final int ic_gif_full=0x7f02001b;
-        public static final int ic_item_bg=0x7f02001c;
-        public static final int ic_launcher=0x7f02001d;
-        public static final int ic_main_jia=0x7f02001e;
-        public static final int ic_mine_check=0x7f02001f;
-        public static final int ic_mine_uncheck=0x7f020020;
-        public static final int ic_news_check=0x7f020021;
-        public static final int ic_news_uncheck=0x7f020022;
-        public static final int ic_stub=0x7f020023;
-        public static final int ic_title_bg2=0x7f020024;
-        public static final int ic_video_fangda=0x7f020025;
-        public static final int ic_video_pause=0x7f020026;
-        public static final int ic_video_play=0x7f020027;
-        public static final int ic_video_thumb=0x7f020028;
-        public static final int ic_vido_check=0x7f020029;
-        public static final int ic_vido_ubcheck=0x7f02002a;
-        public static final int ic_window_bg=0x7f02002b;
-        public static final int indicator_arrow=0x7f02002c;
-        public static final int indicator_bg_bottom=0x7f02002d;
-        public static final int indicator_bg_top=0x7f02002e;
-        public static final int lg_selector_button=0x7f02002f;
-        public static final int loading=0x7f020030;
-        public static final int loading_01=0x7f020031;
-        public static final int loading_02=0x7f020032;
-        public static final int loading_03=0x7f020033;
-        public static final int loading_04=0x7f020034;
-        public static final int loading_05=0x7f020035;
-        public static final int loading_06=0x7f020036;
-        public static final int loading_07=0x7f020037;
-        public static final int mycoin=0x7f020038;
-        public static final int nightmode=0x7f020039;
-        public static final int qqimage=0x7f02003a;
-        public static final int qr_scan_line=0x7f02003b;
-        public static final int select_bt_news=0x7f02003c;
-        public static final int select_color=0x7f02003d;
-        public static final int select_rd1=0x7f02003e;
-        public static final int select_rd2=0x7f02003f;
-        public static final int select_rd3=0x7f020040;
-        public static final int select_rd4=0x7f020041;
-        public static final int select_rd5=0x7f020042;
-        public static final int setting=0x7f020043;
-        public static final int shape_bt_news=0x7f020044;
-        public static final int shape_bt_news_endbled=0x7f020045;
-        public static final int shape_button_checkable=0x7f020046;
-        public static final int shape_button_normal=0x7f020047;
-        public static final int shape_button_pressed=0x7f020048;
-        public static final int shape_coinimage=0x7f020049;
-        public static final int shape_coinnumber=0x7f02004a;
-        public static final int shiftnightbutton_border=0x7f02004b;
-        public static final int sign=0x7f02004c;
-        public static final int ta=0x7f02004d;
-        public static final int touxiang=0x7f02004e;
-        public static final int u=0x7f02004f;
-        public static final int weiboimage=0x7f020050;
-        public static final int weixinimage=0x7f020051;
+        public static final int ag=0x7f020000;
+        public static final int back=0x7f020001;
+        public static final int banner_dian_blur=0x7f020002;
+        public static final int banner_dian_focus=0x7f020003;
+        public static final int bar=0x7f020004;
+        public static final int button_border=0x7f020005;
+        public static final int cicle_banner_dian_blur=0x7f020006;
+        public static final int cicle_banner_dian_focus=0x7f020007;
+        public static final int coin=0x7f020008;
+        public static final int collection=0x7f020009;
+        public static final int default_ptr_flip=0x7f02000a;
+        public static final int default_ptr_rotate=0x7f02000b;
+        public static final int footprint=0x7f02000c;
+        public static final int ic_bar=0x7f02000d;
+        public static final int ic_bp=0x7f02000e;
+        public static final int ic_chat_check=0x7f02000f;
+        public static final int ic_chat_uncheck=0x7f020010;
+        public static final int ic_empty=0x7f020011;
+        public static final int ic_error=0x7f020012;
+        public static final int ic_find_check=0x7f020013;
+        public static final int ic_find_flash=0x7f020014;
+        public static final int ic_find_sp_bg=0x7f020015;
+        public static final int ic_find_uncheck=0x7f020016;
+        public static final int ic_finish_bg=0x7f020017;
+        public static final int ic_finish_d=0x7f020018;
+        public static final int ic_finish_j=0x7f020019;
+        public static final int ic_funny_check=0x7f02001a;
+        public static final int ic_funny_uncheck=0x7f02001b;
+        public static final int ic_gif_full=0x7f02001c;
+        public static final int ic_item_bg=0x7f02001d;
+        public static final int ic_launcher=0x7f02001e;
+        public static final int ic_main_jia=0x7f02001f;
+        public static final int ic_mine_check=0x7f020020;
+        public static final int ic_mine_uncheck=0x7f020021;
+        public static final int ic_news_check=0x7f020022;
+        public static final int ic_news_uncheck=0x7f020023;
+        public static final int ic_stub=0x7f020024;
+        public static final int ic_title_bg2=0x7f020025;
+        public static final int ic_video_fangda=0x7f020026;
+        public static final int ic_video_pause=0x7f020027;
+        public static final int ic_video_play=0x7f020028;
+        public static final int ic_video_thumb=0x7f020029;
+        public static final int ic_vido_check=0x7f02002a;
+        public static final int ic_vido_ubcheck=0x7f02002b;
+        public static final int ic_window_bg=0x7f02002c;
+        public static final int indicator_arrow=0x7f02002d;
+        public static final int indicator_bg_bottom=0x7f02002e;
+        public static final int indicator_bg_top=0x7f02002f;
+        public static final int lg_selector_button=0x7f020030;
+        public static final int loading=0x7f020031;
+        public static final int loading_01=0x7f020032;
+        public static final int loading_02=0x7f020033;
+        public static final int loading_03=0x7f020034;
+        public static final int loading_04=0x7f020035;
+        public static final int loading_05=0x7f020036;
+        public static final int loading_06=0x7f020037;
+        public static final int loading_07=0x7f020038;
+        public static final int mycoin=0x7f020039;
+        public static final int nightmode=0x7f02003a;
+        public static final int qqimage=0x7f02003b;
+        public static final int qr_scan_line=0x7f02003c;
+        public static final int select_bt_news=0x7f02003d;
+        public static final int select_color=0x7f02003e;
+        public static final int select_rd1=0x7f02003f;
+        public static final int select_rd2=0x7f020040;
+        public static final int select_rd3=0x7f020041;
+        public static final int select_rd4=0x7f020042;
+        public static final int select_rd5=0x7f020043;
+        public static final int setting=0x7f020044;
+        public static final int shape_bt_news=0x7f020045;
+        public static final int shape_bt_news_endbled=0x7f020046;
+        public static final int shape_button_checkable=0x7f020047;
+        public static final int shape_button_normal=0x7f020048;
+        public static final int shape_button_pressed=0x7f020049;
+        public static final int shape_coinimage=0x7f02004a;
+        public static final int shape_coinnumber=0x7f02004b;
+        public static final int shiftnightbutton_border=0x7f02004c;
+        public static final int sign=0x7f02004d;
+        public static final int ta=0x7f02004e;
+        public static final int touxiang=0x7f02004f;
+        public static final int u=0x7f020050;
+        public static final int weiboimage=0x7f020051;
+        public static final int weixinimage=0x7f020052;
     }
     public static final class id {
         public static final int CheckBox2=0x7f05001f;
@@ -352,6 +387,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int main_rl=0x7f050028;
         public static final int main_tv_title=0x7f050029;
         public static final int manualOnly=0x7f050004;
+        public static final int network_gifimageview=0x7f050018;
         public static final int pullDownFromTop=0x7f050005;
         public static final int pullFromEnd=0x7f050002;
         public static final int pullFromStart=0x7f050001;
@@ -425,7 +461,6 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int video_vv=0x7f05003e;
         public static final int viewfinderview=0x7f05000d;
         public static final int vp_news_framents=0x7f05007e;
-        public static final int webView_full_funny=0x7f050018;
         public static final int webview=0x7f05000a;
         public static final int weibo_Button=0x7f050027;
         public static final int weixin_Button=0x7f050025;
@@ -489,11 +524,15 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         /** 
         Base application theme, dependent on API level. This theme is replaced
         by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+
+
     
 
             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
             backward-compatibility can go here.
+
+
         
 
         Base application theme for API 11+. This theme completely replaces
@@ -513,8 +552,77 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
          */
         public static final int AppTheme=0x7f0a0001;
         public static final int MainBtGroup=0x7f0a0002;
+        public static final int nightTheme=0x7f0a0004;
+        public static final int normalTheme=0x7f0a0003;
     }
     public static final class styleable {
+        /** Attributes that can be used with a GifTextureView.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #GifTextureView_gifSource com.news.news:gifSource}</code></td><td></td></tr>
+           <tr><td><code>{@link #GifTextureView_isOpaque com.news.news:isOpaque}</code></td><td></td></tr>
+           </table>
+           @see #GifTextureView_gifSource
+           @see #GifTextureView_isOpaque
+         */
+        public static final int[] GifTextureView = {
+            0x7f010015, 0x7f010016
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.news.news.R.attr#gifSource}
+          attribute's value can be found in the {@link #GifTextureView} array.
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+          @attr name android:gifSource
+        */
+        public static final int GifTextureView_gifSource = 0;
+        /**
+          <p>This symbol is the offset where the {@link com.news.news.R.attr#isOpaque}
+          attribute's value can be found in the {@link #GifTextureView} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:isOpaque
+        */
+        public static final int GifTextureView_isOpaque = 1;
+        /** Attributes that can be used with a GifView.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #GifView_freezesAnimation com.news.news:freezesAnimation}</code></td><td></td></tr>
+           </table>
+           @see #GifView_freezesAnimation
+         */
+        public static final int[] GifView = {
+            0x7f010017
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.news.news.R.attr#freezesAnimation}
+          attribute's value can be found in the {@link #GifView} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:freezesAnimation
+        */
+        public static final int GifView_freezesAnimation = 0;
         /** Attributes that can be used with a PullToRefresh.
            <p>Includes the following attributes:</p>
            <table>
@@ -529,20 +637,20 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            <tr><td><code>{@link #PullToRefresh_ptrDrawableStart com.news.news:ptrDrawableStart}</code></td><td> Drawable to use as Loading Indicator in the Header View.</td></tr>
            <tr><td><code>{@link #PullToRefresh_ptrDrawableTop com.news.news:ptrDrawableTop}</code></td><td></td></tr>
            <tr><td><code>{@link #PullToRefresh_ptrHeaderBackground com.news.news:ptrHeaderBackground}</code></td><td> A drawable to use as the background of the Header and Footer Loading Views 
-  设置下拉Header或者上拉Footer的背景色 </td></tr>
+ 设置下拉Header或者上拉Footer的背景色 </td></tr>
            <tr><td><code>{@link #PullToRefresh_ptrHeaderSubTextColor com.news.news:ptrHeaderSubTextColor}</code></td><td> Text Color of the Header and Footer Loading Views Sub Header 
  用于设置Header与Footer中上次刷新时间的颜色 </td></tr>
            <tr><td><code>{@link #PullToRefresh_ptrHeaderTextAppearance com.news.news:ptrHeaderTextAppearance}</code></td><td> Base text color, typeface, size, and style for Header and Footer Loading Views 
  分别设置拉Header或者上拉Footer中字体的类型颜色等等 </td></tr>
            <tr><td><code>{@link #PullToRefresh_ptrHeaderTextColor com.news.news:ptrHeaderTextColor}</code></td><td> Text Color of the Header and Footer Loading Views 
  用于设置Header与Footer中文本的颜色 </td></tr>
-           <tr><td><code>{@link #PullToRefresh_ptrListViewExtrasEnabled com.news.news:ptrListViewExtrasEnabled}</code></td><td>  
+           <tr><td><code>{@link #PullToRefresh_ptrListViewExtrasEnabled com.news.news:ptrListViewExtrasEnabled}</code></td><td>
             Whether PullToRefreshListView has it's extras enabled.</td></tr>
            <tr><td><code>{@link #PullToRefresh_ptrMode com.news.news:ptrMode}</code></td><td> Mode of Pull-to-Refresh that should be used </td></tr>
            <tr><td><code>{@link #PullToRefresh_ptrOverScroll com.news.news:ptrOverScroll}</code></td><td> Whether Android's built-in Over Scroll should be utilised for Pull-to-Refresh.</td></tr>
            <tr><td><code>{@link #PullToRefresh_ptrRefreshableViewBackground com.news.news:ptrRefreshableViewBackground}</code></td><td> A drawable to use as the background of the Refreshable View 
  设置整个刷新列表的背景色 </td></tr>
-           <tr><td><code>{@link #PullToRefresh_ptrRotateDrawableWhilePulling com.news.news:ptrRotateDrawableWhilePulling}</code></td><td>  
+           <tr><td><code>{@link #PullToRefresh_ptrRotateDrawableWhilePulling com.news.news:ptrRotateDrawableWhilePulling}</code></td><td>
             Whether the Drawable should be continually rotated as you pull.</td></tr>
            <tr><td><code>{@link #PullToRefresh_ptrScrollingWhileRefreshingEnabled com.news.news:ptrScrollingWhileRefreshingEnabled}</code></td><td> Whether the user can scroll while the View is Refreshing 
  刷新的时候，是否允许ListView或GridView滚动 </td></tr>
@@ -588,7 +696,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
           <p>This is a private symbol.
-          @attr name com.news.news:ptrAdapterViewBackground
+          @attr name android:ptrAdapterViewBackground
         */
         public static final int PullToRefresh_ptrAdapterViewBackground = 16;
         /**
@@ -604,10 +712,10 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <colgroup align="left" />
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
 <tr><td><code>rotate</code></td><td>0x0</td><td></td></tr>
-<tr><td><code>flip</code></td><td>0x1</td><td> flip（翻转动画）， rotate（旋转动画）  </td></tr>
+<tr><td><code>flip</code></td><td>0x1</td><td> flip（翻转动画）， rotate（旋转动画） </td></tr>
 </table>
           <p>This is a private symbol.
-          @attr name com.news.news:ptrAnimationStyle
+          @attr name android:ptrAnimationStyle
         */
         public static final int PullToRefresh_ptrAnimationStyle = 12;
         /**
@@ -620,7 +728,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.news.news:ptrDrawable
+          @attr name android:ptrDrawable
         */
         public static final int PullToRefresh_ptrDrawable = 6;
         /**
@@ -630,7 +738,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.news.news:ptrDrawableBottom
+          @attr name android:ptrDrawableBottom
         */
         public static final int PullToRefresh_ptrDrawableBottom = 18;
         /**
@@ -643,20 +751,20 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.news.news:ptrDrawableEnd
+          @attr name android:ptrDrawableEnd
         */
         public static final int PullToRefresh_ptrDrawableEnd = 8;
         /**
           <p>
           @attr description
            Drawable to use as Loading Indicator in the Header View. Overrides value set in ptrDrawable. 
- 头部视图的图标
+ 头部视图的图标 
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.news.news:ptrDrawableStart
+          @attr name android:ptrDrawableStart
         */
         public static final int PullToRefresh_ptrDrawableStart = 7;
         /**
@@ -666,14 +774,14 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.news.news:ptrDrawableTop
+          @attr name android:ptrDrawableTop
         */
         public static final int PullToRefresh_ptrDrawableTop = 17;
         /**
           <p>
           @attr description
            A drawable to use as the background of the Header and Footer Loading Views 
-  设置下拉Header或者上拉Footer的背景色 
+ 设置下拉Header或者上拉Footer的背景色 
 
 
           <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
@@ -681,7 +789,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
           <p>This is a private symbol.
-          @attr name com.news.news:ptrHeaderBackground
+          @attr name android:ptrHeaderBackground
         */
         public static final int PullToRefresh_ptrHeaderBackground = 1;
         /**
@@ -696,7 +804,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
           <p>This is a private symbol.
-          @attr name com.news.news:ptrHeaderSubTextColor
+          @attr name android:ptrHeaderSubTextColor
         */
         public static final int PullToRefresh_ptrHeaderSubTextColor = 3;
         /**
@@ -709,7 +817,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.news.news:ptrHeaderTextAppearance
+          @attr name android:ptrHeaderTextAppearance
         */
         public static final int PullToRefresh_ptrHeaderTextAppearance = 10;
         /**
@@ -724,13 +832,13 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
           <p>This is a private symbol.
-          @attr name com.news.news:ptrHeaderTextColor
+          @attr name android:ptrHeaderTextColor
         */
         public static final int PullToRefresh_ptrHeaderTextColor = 2;
         /**
           <p>
           @attr description
-            
+          
             Whether PullToRefreshListView has it's extras enabled. This allows the user to be   
             able to scroll while refreshing, and behaves better. It acheives this by adding  
             Header and/or Footer Views to the ListView.  
@@ -742,7 +850,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
 <p>May be a boolean value, either "<code>true</code>" or "<code>false</code>".
           <p>This is a private symbol.
-          @attr name com.news.news:ptrListViewExtrasEnabled
+          @attr name android:ptrListViewExtrasEnabled
         */
         public static final int PullToRefresh_ptrListViewExtrasEnabled = 14;
         /**
@@ -767,7 +875,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <tr><td><code>pullUpFromBottom</code></td><td>0x2</td><td></td></tr>
 </table>
           <p>This is a private symbol.
-          @attr name com.news.news:ptrMode
+          @attr name android:ptrMode
         */
         public static final int PullToRefresh_ptrMode = 4;
         /**
@@ -780,7 +888,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
 <p>May be a boolean value, either "<code>true</code>" or "<code>false</code>".
           <p>This is a private symbol.
-          @attr name com.news.news:ptrOverScroll
+          @attr name android:ptrOverScroll
         */
         public static final int PullToRefresh_ptrOverScroll = 9;
         /**
@@ -795,13 +903,13 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
           <p>This is a private symbol.
-          @attr name com.news.news:ptrRefreshableViewBackground
+          @attr name android:ptrRefreshableViewBackground
         */
         public static final int PullToRefresh_ptrRefreshableViewBackground = 0;
         /**
           <p>
           @attr description
-            
+          
             Whether the Drawable should be continually rotated as you pull. This only  
             takes effect when using the 'Rotate' Animation Style.  
         
@@ -811,7 +919,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
 <p>May be a boolean value, either "<code>true</code>" or "<code>false</code>".
           <p>This is a private symbol.
-          @attr name com.news.news:ptrRotateDrawableWhilePulling
+          @attr name android:ptrRotateDrawableWhilePulling
         */
         public static final int PullToRefresh_ptrRotateDrawableWhilePulling = 15;
         /**
@@ -825,7 +933,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
 <p>May be a boolean value, either "<code>true</code>" or "<code>false</code>".
           <p>This is a private symbol.
-          @attr name com.news.news:ptrScrollingWhileRefreshingEnabled
+          @attr name android:ptrScrollingWhileRefreshingEnabled
         */
         public static final int PullToRefresh_ptrScrollingWhileRefreshingEnabled = 13;
         /**
@@ -839,7 +947,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
 <p>May be a boolean value, either "<code>true</code>" or "<code>false</code>".
           <p>This is a private symbol.
-          @attr name com.news.news:ptrShowIndicator
+          @attr name android:ptrShowIndicator
         */
         public static final int PullToRefresh_ptrShowIndicator = 5;
         /**
@@ -851,7 +959,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.news.news:ptrSubHeaderTextAppearance
+          @attr name android:ptrSubHeaderTextAppearance
         */
         public static final int PullToRefresh_ptrSubHeaderTextAppearance = 11;
     };

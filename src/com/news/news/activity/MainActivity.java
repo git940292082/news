@@ -11,15 +11,21 @@ import com.news.news.fragment.FramVideo;
 import com.zxing.android.CaptureActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
+import android.graphics.PixelFormat;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup.LayoutParams;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.PopupWindow;
@@ -42,7 +48,6 @@ public class MainActivity extends FragmentActivity implements OnCheckedChangeLis
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-
 		loadView();
 
 		loadListener();
@@ -93,6 +98,7 @@ public class MainActivity extends FragmentActivity implements OnCheckedChangeLis
 		PageAdapter pageAdapter=new PageAdapter(getSupportFragmentManager());
 		framPage.setOffscreenPageLimit(1);
 		framPage.setAdapter(pageAdapter);
+//		night();
 	}
 	public class PageAdapter  extends FragmentPagerAdapter{
 		public PageAdapter(FragmentManager fm) {
@@ -112,34 +118,36 @@ public class MainActivity extends FragmentActivity implements OnCheckedChangeLis
 		}
 
 	}
-
 	@Override
 	public void onCheckedChanged(RadioGroup group, int checkedId) {
 		// TODO Auto-generated method stub
 		switch (checkedId) {
 		case R.id.radio1:
 			framPage.setCurrentItem(0,false);
-			tvTitle.setText("  –¬Œ≈  ");
+			tvTitle.setText("  Êñ∞Èóª  ");
 			break;
 		case R.id.radio2:
 			framPage.setCurrentItem(1,false);
-			tvTitle.setText("  ”È¿÷  ");
+			tvTitle.setText("  Â®±‰πê  ");
 			break;
 		case R.id.radio3:
 			framPage.setCurrentItem(2,false);
-			tvTitle.setText("   ”∆µ  ");
+			tvTitle.setText("  ËßÜÈ¢ë  ");
 			break;
 		case R.id.radio4:
 			framPage.setCurrentItem(3,false);
-			tvTitle.setText("  ∑¢œ÷  ");
+			tvTitle.setText("  ÂèëÁé∞  ");
 			break;
 		case R.id.radio5:
 			framPage.setCurrentItem(4,false);
-			tvTitle.setText("  Œ“µƒ  ");
+			tvTitle.setText("  ÊàëÁöÑ  ");
 			break;
 		}
 	}
 	long currentTime;
+	private TextView myView;
+	private ViewPager mWindowManager;
+	private Window window;
 	@Override
 	public void onBackPressed() {
 		// TODO Auto-generated method stub
@@ -147,7 +155,7 @@ public class MainActivity extends FragmentActivity implements OnCheckedChangeLis
 		if(currentTime<2000){
 			finish();
 		}else{
-			Toast.makeText(this, "‘Ÿ∞¥“ª¥ŒÕÀ≥ˆ≥Ã–Ú", Toast.LENGTH_SHORT).show();
+			Toast.makeText(this, "ÂÜçÊåâ‰∏ÄÊ¨°ÈÄÄÂá∫Á®ãÂ∫è", Toast.LENGTH_SHORT).show();
 			currentTime=System.currentTimeMillis();
 		}
 	}
@@ -166,5 +174,22 @@ public class MainActivity extends FragmentActivity implements OnCheckedChangeLis
 			startActivity(new Intent(this,CaptureActivity.class));
 			break;
 		}
+	}
+	public void night() {
+		WindowManager.LayoutParams params = new WindowManager.LayoutParams(
+				LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT,
+				WindowManager.LayoutParams.TYPE_APPLICATION,
+				WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE
+				| WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE,
+				PixelFormat.TRANSLUCENT);
+		params.gravity=Gravity.BOTTOM;
+		params.y=10;
+		if(myView==null){
+			myView=new TextView(this);
+			 window=getWindow();
+			window.addContentView(myView, params);
+			myView.setBackgroundColor(0x80000000);
+		}
+		mWindowManager.addView(myView, params);
 	}
 }
