@@ -7,14 +7,10 @@ import org.xutils.x;
 import pl.droidsonroids.gif.GifDrawable;
 import pl.droidsonroids.gif.GifImageView;
 
-import com.android.volley.toolbox.ImageLoader;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.news.news.R;
-import com.news.news.app.App;
 import com.news.news.entity.FunnyItem;
-import com.news.news.untils.BitmapUtils;
-
 import android.os.Bundle;
 import android.widget.Toast;
 import android.app.Activity;
