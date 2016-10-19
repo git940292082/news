@@ -50,7 +50,6 @@ public class ToutiaoFragment extends Fragment {
 
 	private void setListeners() {
 		lvNews.setOnItemClickListener(new OnItemClickListener() {
-
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 				Toutiao news = newTop.getResult().getData().get(position);

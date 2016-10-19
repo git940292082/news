@@ -6,7 +6,7 @@ package com.news.news.entity;
  * @author Shark Z
  * 
  */
-public class Funny {
+public class Funny  {
 
 	private int error_code;
 	private String reason;

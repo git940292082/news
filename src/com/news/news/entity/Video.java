@@ -1,6 +1,8 @@
 package com.news.news.entity;
 
-public class Video {
+import java.io.Serializable;
+
+public class Video implements Serializable{
 	private String topicImg;    //头部图片
 	private String videosource; //视频来源
 	private String mp4Hd_url;	//高清视频

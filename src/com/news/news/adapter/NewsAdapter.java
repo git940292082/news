@@ -1,5 +1,7 @@
 package com.news.news.adapter;
 
+import inject.I;
+
 import java.util.List;
 import java.util.Random;
 
@@ -7,16 +9,14 @@ import org.xutils.x;
 import org.xutils.image.ImageOptions;
 
 import com.news.news.R;
+import com.news.news.adapter.Holder.NewItemView;
 import com.news.news.entity.news.Toutiao;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 public class NewsAdapter extends BaseAdapter {
 	Context context;
@@ -47,18 +47,15 @@ public class NewsAdapter extends BaseAdapter {
 
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
-		ViewHolder holder = null;
+		NewItemView holder = null;
 		if (convertView == null) {
 			convertView = inflater.inflate(R.layout.news_item, null);
-			holder = new ViewHolder();
-			holder.ivNewsimage = (ImageView) convertView.findViewById(R.id.iv_news_item_image);
-			holder.tvTitle = (TextView) convertView.findViewById(R.id.tv_news_item_title);
-			holder.tvSource = (TextView) convertView.findViewById(R.id.tv_news_item_source);
-			holder.tvComment = (TextView) convertView.findViewById(R.id.tv_news_item_comment);
+			holder = new NewItemView();
+			I.invect(holder, convertView);
 			convertView.setTag(holder);
-
+			
 		}
-		holder = (ViewHolder) convertView.getTag();
+		holder = (NewItemView) convertView.getTag();
 		Toutiao toutiaos = toutiao.get(position);
 		holder.tvTitle.setText(toutiaos.getTitle());
 		holder.tvSource.setText(toutiaos.getAuthor_name());
@@ -71,14 +68,6 @@ public class NewsAdapter extends BaseAdapter {
 		}
 
 		return convertView;
-	}
-
-	class ViewHolder {
-		ImageView ivNewsimage;
-		TextView tvTitle;
-		TextView tvSource;
-		TextView tvComment;
-
 	}
 
 }

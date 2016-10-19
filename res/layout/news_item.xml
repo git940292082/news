@@ -27,6 +27,7 @@
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:paddingRight="10dp"
+            android:textColor="#000"
             android:text="女演员称有郭姓前任衣食独守空房迪斯科浪费精力宽松" />
 
         <TextView

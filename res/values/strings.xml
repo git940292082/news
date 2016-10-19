@@ -28,5 +28,6 @@
     <string name="title_activity_funny_fragment__item__to_">FunnyFragment_Item_To_Activity</string>
     <string name="title_activity_news_web">NewsWebActivity</string>
     <string name="title_activity_video_play">VideoPlayActivity</string>
+    <string name="title_activity_collection">CollectionActivity</string>
 
 </resources>

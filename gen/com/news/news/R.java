@@ -262,242 +262,252 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int ic_main_jia=0x7f02001f;
         public static final int ic_mine_check=0x7f020020;
         public static final int ic_mine_uncheck=0x7f020021;
-        public static final int ic_news_check=0x7f020022;
-        public static final int ic_news_uncheck=0x7f020023;
-        public static final int ic_stub=0x7f020024;
-        public static final int ic_title_bg2=0x7f020025;
-        public static final int ic_video_fangda=0x7f020026;
-        public static final int ic_video_pause=0x7f020027;
-        public static final int ic_video_play=0x7f020028;
-        public static final int ic_video_thumb=0x7f020029;
-        public static final int ic_vido_check=0x7f02002a;
-        public static final int ic_vido_ubcheck=0x7f02002b;
-        public static final int ic_window_bg=0x7f02002c;
-        public static final int indicator_arrow=0x7f02002d;
-        public static final int indicator_bg_bottom=0x7f02002e;
-        public static final int indicator_bg_top=0x7f02002f;
-        public static final int lg_selector_button=0x7f020030;
-        public static final int loading=0x7f020031;
-        public static final int loading_01=0x7f020032;
-        public static final int loading_02=0x7f020033;
-        public static final int loading_03=0x7f020034;
-        public static final int loading_04=0x7f020035;
-        public static final int loading_05=0x7f020036;
-        public static final int loading_06=0x7f020037;
-        public static final int loading_07=0x7f020038;
-        public static final int mycoin=0x7f020039;
-        public static final int nightmode=0x7f02003a;
-        public static final int qqimage=0x7f02003b;
-        public static final int qr_scan_line=0x7f02003c;
-        public static final int select_bt_news=0x7f02003d;
-        public static final int select_color=0x7f02003e;
-        public static final int select_rd1=0x7f02003f;
-        public static final int select_rd2=0x7f020040;
-        public static final int select_rd3=0x7f020041;
-        public static final int select_rd4=0x7f020042;
-        public static final int select_rd5=0x7f020043;
-        public static final int setting=0x7f020044;
-        public static final int shape_bt_news=0x7f020045;
-        public static final int shape_bt_news_endbled=0x7f020046;
-        public static final int shape_button_checkable=0x7f020047;
-        public static final int shape_button_normal=0x7f020048;
-        public static final int shape_button_pressed=0x7f020049;
-        public static final int shape_coinimage=0x7f02004a;
-        public static final int shape_coinnumber=0x7f02004b;
-        public static final int shiftnightbutton_border=0x7f02004c;
-        public static final int sign=0x7f02004d;
-        public static final int ta=0x7f02004e;
-        public static final int touxiang=0x7f02004f;
-        public static final int u=0x7f020050;
-        public static final int weiboimage=0x7f020051;
-        public static final int weixinimage=0x7f020052;
+        public static final int ic_moren=0x7f020022;
+        public static final int ic_news_check=0x7f020023;
+        public static final int ic_news_uncheck=0x7f020024;
+        public static final int ic_stub=0x7f020025;
+        public static final int ic_title_bg2=0x7f020026;
+        public static final int ic_video_fangda=0x7f020027;
+        public static final int ic_video_pause=0x7f020028;
+        public static final int ic_video_play=0x7f020029;
+        public static final int ic_video_thumb=0x7f02002a;
+        public static final int ic_vido_check=0x7f02002b;
+        public static final int ic_vido_ubcheck=0x7f02002c;
+        public static final int ic_window_bg=0x7f02002d;
+        public static final int indicator_arrow=0x7f02002e;
+        public static final int indicator_bg_bottom=0x7f02002f;
+        public static final int indicator_bg_top=0x7f020030;
+        public static final int lg_selector_button=0x7f020031;
+        public static final int loading=0x7f020032;
+        public static final int loading_01=0x7f020033;
+        public static final int loading_02=0x7f020034;
+        public static final int loading_03=0x7f020035;
+        public static final int loading_04=0x7f020036;
+        public static final int loading_05=0x7f020037;
+        public static final int loading_06=0x7f020038;
+        public static final int loading_07=0x7f020039;
+        public static final int mycoin=0x7f02003a;
+        public static final int nightmode=0x7f02003b;
+        public static final int qqimage=0x7f02003c;
+        public static final int qr_scan_line=0x7f02003d;
+        public static final int select_bt_news=0x7f02003e;
+        public static final int select_color=0x7f02003f;
+        public static final int select_rd1=0x7f020040;
+        public static final int select_rd2=0x7f020041;
+        public static final int select_rd3=0x7f020042;
+        public static final int select_rd4=0x7f020043;
+        public static final int select_rd5=0x7f020044;
+        public static final int setting=0x7f020045;
+        public static final int shape_bt_news=0x7f020046;
+        public static final int shape_bt_news_endbled=0x7f020047;
+        public static final int shape_button_checkable=0x7f020048;
+        public static final int shape_button_normal=0x7f020049;
+        public static final int shape_button_pressed=0x7f02004a;
+        public static final int shape_coinimage=0x7f02004b;
+        public static final int shape_coinnumber=0x7f02004c;
+        public static final int shiftnightbutton_border=0x7f02004d;
+        public static final int sign=0x7f02004e;
+        public static final int ta=0x7f02004f;
+        public static final int touxiang=0x7f020050;
+        public static final int u=0x7f020051;
+        public static final int weiboimage=0x7f020052;
+        public static final int weixinimage=0x7f020053;
     }
     public static final class id {
-        public static final int CheckBox2=0x7f05001f;
-        public static final int Ci_image=0x7f05005b;
-        public static final int action_settings=0x7f050099;
+        public static final int CheckBox2=0x7f050023;
+        public static final int Ci_image=0x7f050060;
+        public static final int action_settings=0x7f0500a0;
         public static final int both=0x7f050003;
-        public static final int btn_login_mine=0x7f05005c;
-        public static final int btn_regist_mine=0x7f05005d;
-        public static final int btn_shift_nightmode=0x7f050070;
-        public static final int btn_sign=0x7f050061;
-        public static final int checkBox1=0x7f050021;
+        public static final int btn_login_mine=0x7f050061;
+        public static final int btn_regist_mine=0x7f050062;
+        public static final int btn_shift_nightmode=0x7f050075;
+        public static final int btn_sign=0x7f050066;
+        public static final int checkBox1=0x7f050025;
+        public static final int collecion_back=0x7f05000f;
+        public static final int collection_btn_clear=0x7f050011;
         public static final int disabled=0x7f050000;
-        public static final int fgpwd2_btn_achieve=0x7f050017;
-        public static final int fgpwd2_et_pwd=0x7f050016;
-        public static final int fgpwd2_tv_pwd2=0x7f050015;
-        public static final int fgpwd_btn_achieve=0x7f050014;
-        public static final int fgpwd_et_class=0x7f050013;
-        public static final int fgpwd_et_username=0x7f050011;
-        public static final int fgpwd_rl_form=0x7f05000f;
-        public static final int fgpwd_tv_class=0x7f050012;
-        public static final int fgpwd_tv_username=0x7f050010;
-        public static final int find_imgHandle=0x7f050049;
-        public static final int find_jock_img=0x7f05004c;
-        public static final int find_jock_tvTalk=0x7f05004b;
-        public static final int find_joke_line=0x7f050048;
-        public static final int find_joke_title=0x7f050046;
-        public static final int find_joke_tv_title=0x7f050047;
-        public static final int find_luck_line=0x7f050050;
-        public static final int find_luck_sp=0x7f05004f;
-        public static final int find_luck_title=0x7f05004d;
-        public static final int find_luck_tv_title=0x7f05004e;
-        public static final int find_tv_hander=0x7f05004a;
-        public static final int fl_inner=0x7f05008c;
+        public static final int fgpwd2_btn_achieve=0x7f05001b;
+        public static final int fgpwd2_et_pwd=0x7f05001a;
+        public static final int fgpwd2_tv_pwd2=0x7f050019;
+        public static final int fgpwd_btn_achieve=0x7f050018;
+        public static final int fgpwd_et_class=0x7f050017;
+        public static final int fgpwd_et_username=0x7f050015;
+        public static final int fgpwd_rl_form=0x7f050013;
+        public static final int fgpwd_tv_class=0x7f050016;
+        public static final int fgpwd_tv_username=0x7f050014;
+        public static final int find_imgHandle=0x7f05004e;
+        public static final int find_jock_img=0x7f050051;
+        public static final int find_jock_tvTalk=0x7f050050;
+        public static final int find_joke_line=0x7f05004d;
+        public static final int find_joke_title=0x7f05004b;
+        public static final int find_joke_tv_title=0x7f05004c;
+        public static final int find_luck_line=0x7f050055;
+        public static final int find_luck_sp=0x7f050054;
+        public static final int find_luck_title=0x7f050052;
+        public static final int find_luck_tv_title=0x7f050053;
+        public static final int find_tv_hander=0x7f05004f;
+        public static final int fl_inner=0x7f050091;
         public static final int flip=0x7f050008;
-        public static final int fram_video_lv=0x7f05007f;
+        public static final int fram_video_lv=0x7f050084;
         public static final int gridview=0x7f050009;
-        public static final int hsv_news=0x7f050072;
-        public static final int iv_coin=0x7f050066;
-        public static final int iv_collection_mine=0x7f050068;
-        public static final int iv_footprint_mine=0x7f05006b;
-        public static final int iv_funny_pic_item_funny=0x7f050084;
-        public static final int iv_mycoin_mine=0x7f050063;
-        public static final int iv_news_item_content=0x7f050087;
-        public static final int iv_news_item_image=0x7f050086;
-        public static final int iv_nightmode_mine=0x7f05006e;
-        public static final int iv_sign_mine=0x7f05005f;
-        public static final int lg_btn_login=0x7f050020;
-        public static final int lg_et_password=0x7f05001e;
-        public static final int lg_et_username=0x7f05001c;
-        public static final int lg_rl_form=0x7f05001a;
-        public static final int lg_tv_forget=0x7f050022;
-        public static final int lg_tv_password=0x7f05001d;
-        public static final int lg_tv_rg=0x7f050023;
-        public static final int lg_tv_username=0x7f05001b;
-        public static final int ll_collection_mine=0x7f050067;
-        public static final int ll_footprint_mine=0x7f05006a;
-        public static final int ll_mycoin_mine=0x7f050062;
-        public static final int ll_nightmode_mine=0x7f05006d;
-        public static final int ll_sign_mine=0x7f05005e;
-        public static final int loading_process_dialog_progressBar=0x7f050085;
-        public static final int luck_QFriend=0x7f050057;
-        public static final int luck_all=0x7f050052;
-        public static final int luck_color=0x7f050053;
-        public static final int luck_health=0x7f050054;
-        public static final int luck_love=0x7f050056;
-        public static final int luck_luck_sp=0x7f050051;
-        public static final int luck_number=0x7f050055;
-        public static final int luck_summary=0x7f050058;
-        public static final int lv_fram_funny=0x7f050059;
-        public static final int lv_news_list=0x7f05008b;
-        public static final int main_fram=0x7f05002b;
-        public static final int main_groaup=0x7f05002c;
-        public static final int main_itbn_jia=0x7f05002a;
-        public static final int main_rl=0x7f050028;
-        public static final int main_tv_title=0x7f050029;
+        public static final int hsv_news=0x7f050077;
+        public static final int iv_coin=0x7f05006b;
+        public static final int iv_collection_mine=0x7f05006d;
+        public static final int iv_footprint_mine=0x7f050070;
+        public static final int iv_funny_pic_item_funny=0x7f050089;
+        public static final int iv_mycoin_mine=0x7f050068;
+        public static final int iv_news_item_content=0x7f05008c;
+        public static final int iv_news_item_image=0x7f05008b;
+        public static final int iv_nightmode_mine=0x7f050073;
+        public static final int iv_sign_mine=0x7f050064;
+        public static final int lg_btn_login=0x7f050024;
+        public static final int lg_et_password=0x7f050022;
+        public static final int lg_et_username=0x7f050020;
+        public static final int lg_rl_form=0x7f05001e;
+        public static final int lg_tv_forget=0x7f050026;
+        public static final int lg_tv_password=0x7f050021;
+        public static final int lg_tv_rg=0x7f050027;
+        public static final int lg_tv_username=0x7f05001f;
+        public static final int ll_collection_mine=0x7f05006c;
+        public static final int ll_footprint_mine=0x7f05006f;
+        public static final int ll_mycoin_mine=0x7f050067;
+        public static final int ll_nightmode_mine=0x7f050072;
+        public static final int ll_sign_mine=0x7f050063;
+        public static final int loading_process_dialog_progressBar=0x7f05008a;
+        public static final int luck_QFriend=0x7f05005c;
+        public static final int luck_all=0x7f050057;
+        public static final int luck_color=0x7f050058;
+        public static final int luck_health=0x7f050059;
+        public static final int luck_love=0x7f05005b;
+        public static final int luck_luck_sp=0x7f050056;
+        public static final int luck_number=0x7f05005a;
+        public static final int luck_summary=0x7f05005d;
+        public static final int lv_collection=0x7f050010;
+        public static final int lv_fram_funny=0x7f05005e;
+        public static final int lv_news_list=0x7f050090;
+        public static final int main_fram=0x7f05002f;
+        public static final int main_groaup=0x7f050030;
+        public static final int main_itbn_jia=0x7f05002e;
+        public static final int main_rl=0x7f05002c;
+        public static final int main_tv_title=0x7f05002d;
         public static final int manualOnly=0x7f050004;
-        public static final int network_gifimageview=0x7f050018;
+        public static final int network_gifimageview=0x7f05001c;
+        public static final int new_web_back=0x7f050036;
+        public static final int new_web_btn_collection=0x7f050038;
         public static final int pullDownFromTop=0x7f050005;
         public static final int pullFromEnd=0x7f050002;
         public static final int pullFromStart=0x7f050001;
         public static final int pullUpFromBottom=0x7f050006;
-        public static final int pull_to_refresh_image=0x7f05008d;
-        public static final int pull_to_refresh_progress=0x7f05008e;
-        public static final int pull_to_refresh_sub_text=0x7f050090;
-        public static final int pull_to_refresh_text=0x7f05008f;
-        public static final int qq_Button=0x7f050026;
-        public static final int radio1=0x7f05002d;
-        public static final int radio2=0x7f05002e;
-        public static final int radio3=0x7f05002f;
-        public static final int radio4=0x7f050030;
-        public static final int radio5=0x7f050031;
-        public static final int rb_news_caijing=0x7f05007c;
-        public static final int rb_news_guoji=0x7f050077;
-        public static final int rb_news_guonei=0x7f050076;
-        public static final int rb_news_junshi=0x7f05007a;
-        public static final int rb_news_keji=0x7f050078;
-        public static final int rb_news_shehui=0x7f050075;
-        public static final int rb_news_shishang=0x7f05007d;
-        public static final int rb_news_tiyu=0x7f05007b;
-        public static final int rb_news_toutiao=0x7f050074;
-        public static final int rb_news_yule=0x7f050079;
-        public static final int rg_btn_achieve=0x7f05003d;
-        public static final int rg_et_email=0x7f050038;
-        public static final int rg_et_password=0x7f05003a;
-        public static final int rg_et_repassword=0x7f05003c;
-        public static final int rg_et_username=0x7f050036;
-        public static final int rg_news=0x7f050073;
-        public static final int rg_rl_form=0x7f050034;
-        public static final int rg_tv_email=0x7f050037;
-        public static final int rg_tv_password=0x7f050039;
-        public static final int rg_tv_repassword=0x7f05003b;
-        public static final int rg_tv_username=0x7f050035;
-        public static final int rl_item_funny=0x7f050081;
-        public static final int rl_mine_title=0x7f05005a;
-        public static final int rl_news_web=0x7f050033;
+        public static final int pull_to_refresh_image=0x7f050092;
+        public static final int pull_to_refresh_progress=0x7f050093;
+        public static final int pull_to_refresh_sub_text=0x7f050095;
+        public static final int pull_to_refresh_text=0x7f050094;
+        public static final int qq_Button=0x7f05002a;
+        public static final int radio1=0x7f050031;
+        public static final int radio2=0x7f050032;
+        public static final int radio3=0x7f050033;
+        public static final int radio4=0x7f050034;
+        public static final int radio5=0x7f050035;
+        public static final int rb_news_caijing=0x7f050081;
+        public static final int rb_news_guoji=0x7f05007c;
+        public static final int rb_news_guonei=0x7f05007b;
+        public static final int rb_news_junshi=0x7f05007f;
+        public static final int rb_news_keji=0x7f05007d;
+        public static final int rb_news_shehui=0x7f05007a;
+        public static final int rb_news_shishang=0x7f050082;
+        public static final int rb_news_tiyu=0x7f050080;
+        public static final int rb_news_toutiao=0x7f050079;
+        public static final int rb_news_yule=0x7f05007e;
+        public static final int rg_btn_achieve=0x7f050042;
+        public static final int rg_et_email=0x7f05003d;
+        public static final int rg_et_password=0x7f05003f;
+        public static final int rg_et_repassword=0x7f050041;
+        public static final int rg_et_username=0x7f05003b;
+        public static final int rg_news=0x7f050078;
+        public static final int rg_rl_form=0x7f050039;
+        public static final int rg_tv_email=0x7f05003c;
+        public static final int rg_tv_password=0x7f05003e;
+        public static final int rg_tv_repassword=0x7f050040;
+        public static final int rg_tv_username=0x7f05003a;
+        public static final int rl_item_funny=0x7f050086;
+        public static final int rl_mine_title=0x7f05005f;
         public static final int rotate=0x7f050007;
         public static final int scrollview=0x7f05000b;
         public static final int surfaceview=0x7f05000c;
-        public static final int textView1=0x7f050024;
-        public static final int title=0x7f05000e;
-        public static final int title_left=0x7f050091;
-        public static final int title_mid=0x7f050092;
-        public static final int title_right=0x7f050093;
-        public static final int tv_back_item_funny=0x7f050080;
-        public static final int tv_coinnumber_mine=0x7f050065;
-        public static final int tv_collection_mine=0x7f050069;
-        public static final int tv_footprint_mine=0x7f05006c;
-        public static final int tv_line_item_funny=0x7f050083;
-        public static final int tv_mycoin_mine=0x7f050064;
-        public static final int tv_news_item_comment=0x7f05008a;
-        public static final int tv_news_item_source=0x7f050089;
-        public static final int tv_news_item_title=0x7f050088;
-        public static final int tv_nightmode_mine=0x7f05006f;
-        public static final int tv_setting_mine=0x7f050071;
-        public static final int tv_signcenter=0x7f050060;
-        public static final int tv_title=0x7f050019;
-        public static final int tv_title_item_funny=0x7f050082;
-        public static final int video_bg=0x7f050095;
-        public static final int video_cache=0x7f050096;
-        public static final int video_fangda=0x7f050044;
-        public static final int video_news_tv_title=0x7f050094;
-        public static final int video_nowtime=0x7f050041;
-        public static final int video_play=0x7f050045;
-        public static final int video_rl_bar=0x7f050040;
-        public static final int video_rl_visi=0x7f05003f;
-        public static final int video_seekbar=0x7f050042;
-        public static final int video_sumtime=0x7f050043;
-        public static final int video_vv=0x7f05003e;
+        public static final int textView1=0x7f050028;
+        public static final int title=0x7f050012;
+        public static final int title_left=0x7f050096;
+        public static final int title_mid=0x7f050097;
+        public static final int title_right=0x7f050098;
+        public static final int tv_back_item_funny=0x7f050085;
+        public static final int tv_coinnumber_mine=0x7f05006a;
+        public static final int tv_collection_mine=0x7f05006e;
+        public static final int tv_footprint_mine=0x7f050071;
+        public static final int tv_line_item_funny=0x7f050088;
+        public static final int tv_mycoin_mine=0x7f050069;
+        public static final int tv_news_item_comment=0x7f05008f;
+        public static final int tv_news_item_source=0x7f05008e;
+        public static final int tv_news_item_title=0x7f05008d;
+        public static final int tv_nightmode_mine=0x7f050074;
+        public static final int tv_setting_mine=0x7f050076;
+        public static final int tv_signcenter=0x7f050065;
+        public static final int tv_title=0x7f05001d;
+        public static final int tv_title_item_funny=0x7f050087;
+        public static final int video_bg=0x7f05009c;
+        public static final int video_cache=0x7f05009d;
+        public static final int video_collection=0x7f05009b;
+        public static final int video_fangda=0x7f050049;
+        public static final int video_item_title=0x7f050099;
+        public static final int video_news_tv_title=0x7f05009a;
+        public static final int video_nowtime=0x7f050046;
+        public static final int video_play=0x7f05004a;
+        public static final int video_rl_bar=0x7f050045;
+        public static final int video_rl_visi=0x7f050044;
+        public static final int video_seekbar=0x7f050047;
+        public static final int video_sumtime=0x7f050048;
+        public static final int video_vv=0x7f050043;
+        public static final int view1=0x7f05000e;
         public static final int viewfinderview=0x7f05000d;
-        public static final int vp_news_framents=0x7f05007e;
+        public static final int vp_news_framents=0x7f050083;
         public static final int webview=0x7f05000a;
-        public static final int weibo_Button=0x7f050027;
-        public static final int weixin_Button=0x7f050025;
-        public static final int windos_back=0x7f050098;
-        public static final int windos_shao=0x7f050097;
-        public static final int wv_news_web=0x7f050032;
+        public static final int weibo_Button=0x7f05002b;
+        public static final int weixin_Button=0x7f050029;
+        public static final int windos_back=0x7f05009f;
+        public static final int windos_shao=0x7f05009e;
+        public static final int wv_news_web=0x7f050037;
     }
     public static final class layout {
         public static final int activity_capture=0x7f030000;
-        public static final int activity_forgetpwd1=0x7f030001;
-        public static final int activity_forgetpwd2=0x7f030002;
-        public static final int activity_funny_fragment__item__to_=0x7f030003;
-        public static final int activity_login=0x7f030004;
-        public static final int activity_main=0x7f030005;
-        public static final int activity_news_web=0x7f030006;
-        public static final int activity_register=0x7f030007;
-        public static final int activity_video_play=0x7f030008;
-        public static final int fram_find=0x7f030009;
-        public static final int fram_funny=0x7f03000a;
-        public static final int fram_mine=0x7f03000b;
-        public static final int fram_news=0x7f03000c;
-        public static final int fram_video=0x7f03000d;
-        public static final int item_funny_fragment_list=0x7f03000e;
-        public static final int loading_process_dialog_anim=0x7f03000f;
-        public static final int news_item=0x7f030010;
-        public static final int news_list=0x7f030011;
-        public static final int pull_to_refresh_header_horizontal=0x7f030012;
-        public static final int pull_to_refresh_header_vertical=0x7f030013;
-        public static final int title=0x7f030014;
-        public static final int video_item=0x7f030015;
-        public static final int windows=0x7f030016;
+        public static final int activity_collection=0x7f030001;
+        public static final int activity_forgetpwd1=0x7f030002;
+        public static final int activity_forgetpwd2=0x7f030003;
+        public static final int activity_funny_fragment__item__to_=0x7f030004;
+        public static final int activity_login=0x7f030005;
+        public static final int activity_main=0x7f030006;
+        public static final int activity_news_web=0x7f030007;
+        public static final int activity_register=0x7f030008;
+        public static final int activity_video_play=0x7f030009;
+        public static final int fram_find=0x7f03000a;
+        public static final int fram_funny=0x7f03000b;
+        public static final int fram_mine=0x7f03000c;
+        public static final int fram_news=0x7f03000d;
+        public static final int fram_video=0x7f03000e;
+        public static final int item_funny_fragment_list=0x7f03000f;
+        public static final int loading_process_dialog_anim=0x7f030010;
+        public static final int news_item=0x7f030011;
+        public static final int news_list=0x7f030012;
+        public static final int pull_to_refresh_header_horizontal=0x7f030013;
+        public static final int pull_to_refresh_header_vertical=0x7f030014;
+        public static final int title=0x7f030015;
+        public static final int video_item=0x7f030016;
+        public static final int windows=0x7f030017;
     }
     public static final class menu {
-        public static final int funny_fragment__item__to_=0x7f0b0000;
-        public static final int main=0x7f0b0001;
-        public static final int news_web=0x7f0b0002;
-        public static final int video_play=0x7f0b0003;
+        public static final int collection=0x7f0b0000;
+        public static final int funny_fragment__item__to_=0x7f0b0001;
+        public static final int main=0x7f0b0002;
+        public static final int news_web=0x7f0b0003;
+        public static final int video_play=0x7f0b0004;
     }
     public static final class string {
         public static final int action_settings=0x7f080007;
@@ -515,6 +525,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int pull_to_refresh_refreshing_label=0x7f080002;
         public static final int pull_to_refresh_release_label=0x7f080001;
         public static final int repassword=0x7f08000c;
+        public static final int title_activity_collection=0x7f080011;
         public static final int title_activity_funny_fragment__item__to_=0x7f08000e;
         public static final int title_activity_news_web=0x7f08000f;
         public static final int title_activity_video_play=0x7f080010;
@@ -579,7 +590,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
 <p>May be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
-          @attr name android:gifSource
+          @attr name com.news.news:gifSource
         */
         public static final int GifTextureView_gifSource = 0;
         /**
@@ -593,7 +604,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name android:isOpaque
+          @attr name com.news.news:isOpaque
         */
         public static final int GifTextureView_isOpaque = 1;
         /** Attributes that can be used with a GifView.
@@ -620,7 +631,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name android:freezesAnimation
+          @attr name com.news.news:freezesAnimation
         */
         public static final int GifView_freezesAnimation = 0;
         /** Attributes that can be used with a PullToRefresh.
@@ -696,7 +707,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
           <p>This is a private symbol.
-          @attr name android:ptrAdapterViewBackground
+          @attr name com.news.news:ptrAdapterViewBackground
         */
         public static final int PullToRefresh_ptrAdapterViewBackground = 16;
         /**
@@ -715,7 +726,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <tr><td><code>flip</code></td><td>0x1</td><td> flip（翻转动画）， rotate（旋转动画） </td></tr>
 </table>
           <p>This is a private symbol.
-          @attr name android:ptrAnimationStyle
+          @attr name com.news.news:ptrAnimationStyle
         */
         public static final int PullToRefresh_ptrAnimationStyle = 12;
         /**
@@ -728,7 +739,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name android:ptrDrawable
+          @attr name com.news.news:ptrDrawable
         */
         public static final int PullToRefresh_ptrDrawable = 6;
         /**
@@ -738,7 +749,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name android:ptrDrawableBottom
+          @attr name com.news.news:ptrDrawableBottom
         */
         public static final int PullToRefresh_ptrDrawableBottom = 18;
         /**
@@ -751,7 +762,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name android:ptrDrawableEnd
+          @attr name com.news.news:ptrDrawableEnd
         */
         public static final int PullToRefresh_ptrDrawableEnd = 8;
         /**
@@ -764,7 +775,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name android:ptrDrawableStart
+          @attr name com.news.news:ptrDrawableStart
         */
         public static final int PullToRefresh_ptrDrawableStart = 7;
         /**
@@ -774,7 +785,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name android:ptrDrawableTop
+          @attr name com.news.news:ptrDrawableTop
         */
         public static final int PullToRefresh_ptrDrawableTop = 17;
         /**
@@ -789,7 +800,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
           <p>This is a private symbol.
-          @attr name android:ptrHeaderBackground
+          @attr name com.news.news:ptrHeaderBackground
         */
         public static final int PullToRefresh_ptrHeaderBackground = 1;
         /**
@@ -804,7 +815,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
           <p>This is a private symbol.
-          @attr name android:ptrHeaderSubTextColor
+          @attr name com.news.news:ptrHeaderSubTextColor
         */
         public static final int PullToRefresh_ptrHeaderSubTextColor = 3;
         /**
@@ -817,7 +828,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name android:ptrHeaderTextAppearance
+          @attr name com.news.news:ptrHeaderTextAppearance
         */
         public static final int PullToRefresh_ptrHeaderTextAppearance = 10;
         /**
@@ -832,7 +843,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
           <p>This is a private symbol.
-          @attr name android:ptrHeaderTextColor
+          @attr name com.news.news:ptrHeaderTextColor
         */
         public static final int PullToRefresh_ptrHeaderTextColor = 2;
         /**
@@ -850,7 +861,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
 <p>May be a boolean value, either "<code>true</code>" or "<code>false</code>".
           <p>This is a private symbol.
-          @attr name android:ptrListViewExtrasEnabled
+          @attr name com.news.news:ptrListViewExtrasEnabled
         */
         public static final int PullToRefresh_ptrListViewExtrasEnabled = 14;
         /**
@@ -875,7 +886,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <tr><td><code>pullUpFromBottom</code></td><td>0x2</td><td></td></tr>
 </table>
           <p>This is a private symbol.
-          @attr name android:ptrMode
+          @attr name com.news.news:ptrMode
         */
         public static final int PullToRefresh_ptrMode = 4;
         /**
@@ -888,7 +899,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
 <p>May be a boolean value, either "<code>true</code>" or "<code>false</code>".
           <p>This is a private symbol.
-          @attr name android:ptrOverScroll
+          @attr name com.news.news:ptrOverScroll
         */
         public static final int PullToRefresh_ptrOverScroll = 9;
         /**
@@ -903,7 +914,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
           <p>This is a private symbol.
-          @attr name android:ptrRefreshableViewBackground
+          @attr name com.news.news:ptrRefreshableViewBackground
         */
         public static final int PullToRefresh_ptrRefreshableViewBackground = 0;
         /**
@@ -919,7 +930,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
 <p>May be a boolean value, either "<code>true</code>" or "<code>false</code>".
           <p>This is a private symbol.
-          @attr name android:ptrRotateDrawableWhilePulling
+          @attr name com.news.news:ptrRotateDrawableWhilePulling
         */
         public static final int PullToRefresh_ptrRotateDrawableWhilePulling = 15;
         /**
@@ -933,7 +944,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
 <p>May be a boolean value, either "<code>true</code>" or "<code>false</code>".
           <p>This is a private symbol.
-          @attr name android:ptrScrollingWhileRefreshingEnabled
+          @attr name com.news.news:ptrScrollingWhileRefreshingEnabled
         */
         public static final int PullToRefresh_ptrScrollingWhileRefreshingEnabled = 13;
         /**
@@ -947,7 +958,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
 <p>May be a boolean value, either "<code>true</code>" or "<code>false</code>".
           <p>This is a private symbol.
-          @attr name android:ptrShowIndicator
+          @attr name com.news.news:ptrShowIndicator
         */
         public static final int PullToRefresh_ptrShowIndicator = 5;
         /**
@@ -959,7 +970,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name android:ptrSubHeaderTextAppearance
+          @attr name com.news.news:ptrSubHeaderTextAppearance
         */
         public static final int PullToRefresh_ptrSubHeaderTextAppearance = 11;
     };

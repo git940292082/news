@@ -62,7 +62,7 @@ public abstract class MyAdapter<T> extends BaseAdapter {
 	@Override
 	public Object getItem(int position) {
 		// TODO Auto-generated method stub
-		return null;
+		return data.get(position);
 	}
 
 	@Override

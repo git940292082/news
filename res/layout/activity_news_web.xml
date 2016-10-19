@@ -3,13 +3,43 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.news.news.activity.NewsWebActivity" >
-  
+
+    <TextView
+        android:id="@+id/view1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/ic_item_bg"
+        android:gravity="center"
+        android:text="详细新闻"
+        android:textColor="#fff"
+        android:textSize="16sp" />
+
+    <ImageView
+        android:id="@+id/new_web_back"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_alignBottom="@+id/view1"
+        android:layout_alignParentTop="true"
+        android:padding="8dp"
+        android:src="@drawable/back" />
 
     <WebView
         android:id="@+id/wv_news_web"
-        android:layout_below="@+id/rl_news_web"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        />
+        android:layout_below="@+id/view1" />
+
+    <Button
+        android:id="@+id/new_web_btn_collection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/view1"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:background="@null"
+        android:text="收藏"
+        android:padding="10dp"
+        android:textColor="#fff"
+        android:textSize="16sp" />
 
 </RelativeLayout>
