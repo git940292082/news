@@ -58,7 +58,7 @@ public class CollectionAdapter extends MyAdapter<Object>{
 				layout=getInflater().inflate(R.layout.video_item, null);
 				videoItemView=new VideoItemView();
 				I.invect(videoItemView, layout);
-			VideoLoad.load(videoItemView, video);
+			VideoLoad.load(videoItemView, video,getContext());
 			videoItemView.btnCollection.setVisibility(View.INVISIBLE);
 		}
 		return layout;

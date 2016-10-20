@@ -3,6 +3,7 @@ package com.news.news.activity;
 import java.util.ArrayList;
 
 import com.news.news.R;
+import com.news.news.app.App;
 import com.news.news.fragment.FramFind;
 import com.news.news.fragment.FramFunny;
 import com.news.news.fragment.FramMine;
@@ -11,8 +12,6 @@ import com.news.news.fragment.FramVideo;
 import com.zxing.android.CaptureActivity;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.content.SharedPreferences.Editor;
 import android.graphics.PixelFormat;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -98,7 +97,6 @@ public class MainActivity extends FragmentActivity implements OnCheckedChangeLis
 		PageAdapter pageAdapter=new PageAdapter(getSupportFragmentManager());
 		framPage.setOffscreenPageLimit(1);
 		framPage.setAdapter(pageAdapter);
-//		night();
 	}
 	public class PageAdapter  extends FragmentPagerAdapter{
 		public PageAdapter(FragmentManager fm) {
@@ -191,5 +189,10 @@ public class MainActivity extends FragmentActivity implements OnCheckedChangeLis
 			myView.setBackgroundColor(0x80000000);
 		}
 		mWindowManager.addView(myView, params);
+	}
+	@Override
+	protected void onDestroy() {
+		// TODO Auto-generated method stub
+		super.onDestroy();
 	}
 }

@@ -1,5 +1,6 @@
 package com.news.news.adapter;
 
+import android.content.Context;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnBufferingUpdateListener;
@@ -20,7 +21,7 @@ import com.news.news.untils.DateTimeUtils;
 
 public class VideoLoad {
 	public static VideoItemView holders;
-	public static void load(final VideoItemView holder, final Video video) {
+	public static void load(final VideoItemView holder, final Video video,final Context context) {
 		// TODO Auto-generated method stub
 		holder.tvTitle.setText(video.getTitle());
 		holder.imgBg.setImageBitmap(null);
@@ -152,7 +153,7 @@ public class VideoLoad {
 				holder.vvVideo.pause();
 				holder.imPlay.setImageResource(R.drawable.ic_video_play);
 				holder.imgBg.setVisibility(View.VISIBLE);
-				App.context.startActivity(intent);
+				context.startActivity(intent);
 			}
 		});
 		holder.btnCollection.setOnClickListener(new OnClickListener() {

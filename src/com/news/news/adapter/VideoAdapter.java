@@ -53,7 +53,7 @@ public class VideoAdapter  extends MyAdapter<Video> {
 		}else{
 			holder=(VideoItemView) layout.getTag();
 		}
-		VideoLoad.load(holder,video);
+		VideoLoad.load(holder,video,getContext());
 		for(int i=0;i<App.collections.size();i++){
 			Object object=App.collections.get(i);
 			holder.btnCollection.setText("ÊÕ²Ø");

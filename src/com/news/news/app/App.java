@@ -1,13 +1,10 @@
 package com.news.news.app;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.io.ObjectInput;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.io.StreamCorruptedException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,11 +12,14 @@ import org.xutils.x;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
+import com.news.news.activity.MainActivity;
 import com.news.news.entity.User;
 
 import android.app.Application;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Environment;
+
 public class App  extends Application{
 	public static Context context;
     public static User user=new User();
@@ -35,6 +35,7 @@ public class App  extends Application{
 		file=new File(Environment.getExternalStorageDirectory()+"/shouchang");
 		x.Ext.init(this);
 		loadCollection();
+		startService(new Intent("action.setvice"));
 		super.onCreate();
 		
 		/**
