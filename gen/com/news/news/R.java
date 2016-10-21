@@ -511,6 +511,8 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
     }
     public static final class string {
         public static final int action_settings=0x7f080007;
+        public static final int app_id=0x7f08000e;
+        public static final int app_key=0x7f08000f;
         public static final int app_name=0x7f080006;
         public static final int email=0x7f08000a;
         public static final int hello_world=0x7f080008;
@@ -525,10 +527,10 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int pull_to_refresh_refreshing_label=0x7f080002;
         public static final int pull_to_refresh_release_label=0x7f080001;
         public static final int repassword=0x7f08000c;
-        public static final int title_activity_collection=0x7f080011;
-        public static final int title_activity_funny_fragment__item__to_=0x7f08000e;
-        public static final int title_activity_news_web=0x7f08000f;
-        public static final int title_activity_video_play=0x7f080010;
+        public static final int title_activity_collection=0x7f080013;
+        public static final int title_activity_funny_fragment__item__to_=0x7f080010;
+        public static final int title_activity_news_web=0x7f080011;
+        public static final int title_activity_video_play=0x7f080012;
         public static final int username=0x7f080009;
     }
     public static final class style {

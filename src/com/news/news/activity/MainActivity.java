@@ -47,6 +47,7 @@ public class MainActivity extends FragmentActivity implements OnCheckedChangeLis
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		App.main=this;
 		loadView();
 
 		loadListener();

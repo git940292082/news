@@ -164,6 +164,7 @@ public class FramFind extends Fragment implements IFindView,OnClickListener,OnIt
 		public void onImageClick(Toutiao toutiao) {
 			// TODO Auto-generated method stub
 			Intent intent=new Intent(getActivity(),NewsWebActivity.class);
+			intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 			intent.putExtra("news",toutiao);
 			startActivity(intent);
 		}

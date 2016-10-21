@@ -150,6 +150,7 @@ public class VideoLoad {
 				}
 				intent.putExtra("url", url);
 				intent.putExtra("time",holder.vvVideo.getCurrentPosition());
+				intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 				holder.vvVideo.pause();
 				holder.imPlay.setImageResource(R.drawable.ic_video_play);
 				holder.imgBg.setVisibility(View.VISIBLE);

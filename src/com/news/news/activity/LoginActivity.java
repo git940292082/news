@@ -4,10 +4,12 @@ import java.util.Map;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
 import com.news.news.R;
 import com.news.news.app.App;
 import com.news.news.server.PreferencesService;
 import com.news.news.server.RegLogin_Server;
+import com.news.news.untils.GlobalConsts;
 import com.tencent.connect.UserInfo;
 import com.tencent.connect.auth.QQAuth;
 import com.tencent.tauth.IUiListener;
@@ -63,7 +65,7 @@ public class LoginActivity extends Activity {
 	private ImageButton weibo;
 	private ImageButton weixin;
 	private ImageButton qq;
-	private String mAppid = "222222";// 测试时使用，真正发布的时候要换成自己的APP_ID
+	// 测试时使用，真正发布的时候要换成自己的APP_ID
 	private QQAuth mQQAuth;
 	private UserInfo mInfo;
 
@@ -109,8 +111,8 @@ public class LoginActivity extends Activity {
 	@Override
 	protected void onStart() {
 		super.onStart();
-		mQQAuth = QQAuth.createInstance(mAppid, getApplicationContext());
-		mTencent = Tencent.createInstance(mAppid,getApplicationContext());
+		mQQAuth = QQAuth.createInstance(App.id, getApplicationContext());
+		mTencent = Tencent.createInstance(App.id,getApplicationContext());
 	}
 	private void SetOnClick() {
 		forPwd.setOnClickListener(new OnClickListener() {

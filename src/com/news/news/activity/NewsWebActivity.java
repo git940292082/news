@@ -59,9 +59,6 @@ public class NewsWebActivity extends BaseActivity {
 			}
 		}
 	}
-	private void setlistner() {
-		// TODO Auto-generated method stub
-	}
 	// »ØÍË
 	@Override
 	public void onBackPressed() {
@@ -89,7 +86,6 @@ public class NewsWebActivity extends BaseActivity {
 		default:
 			break;
 		}
-	
 	}
 
 }

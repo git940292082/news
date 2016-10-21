@@ -9,6 +9,8 @@
     <string name="password">密码</string>
     <string name="repassword">确认密码</string>
     <string name="login_main">登录界面</string>
+    <string name="app_id">1105677889</string>
+    <string name="app_key">FTsxf6kuhg4xNVyz</string>
 
     <string-array name="find_sp_luck">
         <item>白羊座</item>
