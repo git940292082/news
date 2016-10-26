@@ -18,12 +18,16 @@ import com.news.news.entity.news.Toutiao;
 
 import android.content.Context;
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 public class CollectionAdapter extends MyAdapter<Object>{
 	Handler handler=new Handler();
+	public static final int TPYE_VIDEO=0;
+	public static final int TPYE_NEWS=1;
+	public static final int TPYE_FUNNY=2;
 	public CollectionAdapter(Context context, List<Object> data) {
-		
+
 		super(context, data);
 		// TODO Auto-generated constructor stub
 	}
@@ -33,43 +37,44 @@ public class CollectionAdapter extends MyAdapter<Object>{
 	}
 	@Override
 	public View getView(int position, View layout, ViewGroup parent) {
-		// TODO Auto-generated method stub
-		Object object=getItem(position);
+		Object object = getItem(position);
+//		TODO Auto-generated method stub
 		if(object instanceof Toutiao){
 			//新闻模板
 			Toutiao toutiao=(Toutiao) object;
 			NewItemView newItemView=null;
-				layout=getInflater().inflate(R.layout.news_item, null);
-				newItemView=new NewItemView();
-				I.invect(newItemView, layout);
+			layout=getInflater().inflate(R.layout.news_item, null);
+			newItemView=new NewItemView();
+			I.invect(newItemView, layout);
 			loadNew(newItemView,toutiao);
 		}else if(object instanceof FunnyItem){
 			//搞笑模板
 			FunnyItem funnyItem=(FunnyItem) object;
 			FunnyItemView funnyItemView=null;
-				layout=getInflater().inflate(R.layout.item_funny_fragment_list, null);
-				funnyItemView =new FunnyItemView();
-				I.invect(funnyItemView, layout);
+			layout=getInflater().inflate(R.layout.item_funny_fragment_list, null);
+			funnyItemView =new FunnyItemView();
+			I.invect(funnyItemView, layout);
 			loadFunny();
 		}else if(object instanceof Video){
 			//视频模板
 			Video video=(Video) object;
 			VideoItemView videoItemView=null;
-				layout=getInflater().inflate(R.layout.video_item, null);
-				videoItemView=new VideoItemView();
-				I.invect(videoItemView, layout);
+			layout=getInflater().inflate(R.layout.video_item, null);
+			videoItemView=new VideoItemView();
+			I.invect(videoItemView, layout);
 			VideoLoad.load(videoItemView, video,getContext());
 			videoItemView.btnCollection.setVisibility(View.INVISIBLE);
 		}
+		
 		return layout;
 	}
 	private void loadViewo() {
 		// TODO Auto-generated method stub
-		
+
 	}
 	private void loadFunny() {
 		// TODO Auto-generated method stub
-		
+
 	}
 	private void loadNew(NewItemView holder,Toutiao toutiao) {
 		// TODO Auto-generated method stub
@@ -87,5 +92,20 @@ public class CollectionAdapter extends MyAdapter<Object>{
 	public int getViewTypeCount() {
 		// TODO Auto-generated method stub
 		return 3;
+	}
+	@Override
+	public int getItemViewType(int position) {
+		// TODO Auto-generated method stub
+
+		// TODO Auto-generated method stub
+		Object object=getItem(position);
+		if(object instanceof Video){
+			return TPYE_VIDEO;
+		}else if(object instanceof FunnyItem){
+			return TPYE_FUNNY;
+		}else if(object instanceof Toutiao){
+			return TPYE_NEWS;
+		}
+		return super.getItemViewType(position);
 	}
 }

@@ -1,35 +1,65 @@
 package com.news.news.activity;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.xutils.x;
+import org.xutils.view.annotation.ViewInject;
 
 import com.news.news.R;
+import com.news.news.entity.User;
+import com.news.news.server.PreferencesService;
 import com.news.news.server.RegLogin_Server;
+import com.news.news.ui.CircleImageView;
+import com.news.news.untils.BitmapUtils;
+import com.news.news.untils.PhotoUtil;
+
 import android.app.Activity;
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.media.MediaScannerConnection;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Handler;
+import android.os.Parcelable;
+import android.provider.MediaStore;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.PopupWindow;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class RegisterActivity extends Activity {
-	// ¡¾¹¦ÄÜÄ¿±ê¡¿
-	// ¼ÙÉèÕıÈ·µÄÓÃ»§ÃûºÍÃÜÂë·Ö±ğÊÇadmin | admin888
-	// µ±ÓÃ»§ÊäÈëµÄÓÃ»§Ãû²»×ã4Î»£¬ÇÒÃÜÂë²»×ã6Î»Ê±£¬°´Å¥Ê±½ûÓÃµÄ
-	// µ±ÓÃ»§ÃûºÍÃÜÂëµÄ³¤¶È¾ù´ïµ½±ê×¼£¬ÔòÆôÓÃ°´Å¥
-	// µã»÷¡°µÇÂ¼¡±°´Å¥½øĞĞÑéÖ¤£¬²¢Ê¹ÓÃToastÌáÊ¾½á¹û
+	// ã€åŠŸèƒ½ç›®æ ‡ã€‘
+	// å‡è®¾æ­£ç¡®çš„ç”¨æˆ·åå’Œå¯†ç åˆ†åˆ«æ˜¯admin | admin888
+	// å½“ç”¨æˆ·è¾“å…¥çš„ç”¨æˆ·åä¸è¶³4ä½ï¼Œä¸”å¯†ç ä¸è¶³6ä½æ—¶ï¼ŒæŒ‰é’®æ—¶ç¦ç”¨çš„
+	// å½“ç”¨æˆ·åå’Œå¯†ç çš„é•¿åº¦å‡è¾¾åˆ°æ ‡å‡†ï¼Œåˆ™å¯ç”¨æŒ‰é’®
+	// ç‚¹å‡»â€œç™»å½•â€æŒ‰é’®è¿›è¡ŒéªŒè¯ï¼Œå¹¶ä½¿ç”¨Toastæç¤ºç»“æœ
 
-	// ¡¾¿ª·¢²½Öè¡¿
-	// 1. ÉùÃ÷È«¾Ö±äÁ¿£º¡°µÇÂ¼¡±°´Å¥¿Ø¼ş£¬ÊäÈë¡°ÓÃ»§Ãû¡±ºÍ¡°ÃÜÂë¡±µÄÊäÈë¿ò¿Ø¼ş
-	// ¡¾¿ª·¢²½Öè--ĞÂ¡¿
-	// (ĞÂ)1. ÉùÃ÷È«¾Ö±äÁ¿£º2¸öÊäÈë¿ò¿Ø¼ş
+	private static final int CAMERA_WITH_DATA = 0;
+	private static final int CAMERA_CROP_RESULT = 1;
+	private static final int ICON_SIZE = 150;
+	private static final int PHOTO_PICKED_WITH_DATA = 2;
+	private static final int PHOTO_CROP_RESOULT = 3;
+	// ã€å¼€å‘æ­¥éª¤ã€‘
+	// 1. å£°æ˜å…¨å±€å˜é‡ï¼šâ€œç™»å½•â€æŒ‰é’®æ§ä»¶ï¼Œè¾“å…¥â€œç”¨æˆ·åâ€å’Œâ€œå¯†ç â€çš„è¾“å…¥æ¡†æ§ä»¶
+	// ã€å¼€å‘æ­¥éª¤--æ–°ã€‘
+	// (æ–°)1. å£°æ˜å…¨å±€å˜é‡ï¼š2ä¸ªè¾“å…¥æ¡†æ§ä»¶
 	private Button btnAchieve;
 	private EditText etUsername;
 	private EditText etPassword;
@@ -37,18 +67,51 @@ public class RegisterActivity extends Activity {
 	private TextView title_mid;
 	private ImageView title_left;
 	private EditText etEmail;
-
+	private PopupWindow mSetPhotoPop;
+	@ViewInject(R.id.Ci_image)
+	CircleImageView Ci_image;
+	@ViewInject(R.id.Re_Main)
+	RelativeLayout Re_Main;
+	private File mCurrentPhotoFile;
+	private Bitmap imageBitmap;
+	private String imgString="";
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_register);
-		//ÉèÖÃ±êÌâÀ¸--start
-		//±êÌâÀ¸¿ªÊ¼
+		x.view().inject(this);
+		//è®¾ç½®æ ‡é¢˜æ --start
+		//æ ‡é¢˜æ å¼€å§‹
 		title_mid=(TextView)findViewById(R.id.title_mid);
-		title_mid.setText("ĞÂÓÃ»§×¢²á");
+		title_mid.setText("æ–°ç”¨æˆ·æ³¨å†Œ");
 		title_left=(ImageView)findViewById(R.id.title_left);
-		title_left.setVisibility(View.VISIBLE);
-		//±êÌâÀ¸½áÊø
+		SetOnClick();
+		//è®¾ç½®æ ‡é¢˜æ --end
+		// 2.1. åˆå§‹åŒ–ä»¥ä¸Šå£°æ˜çš„æ‰€æœ‰æ§ä»¶
+		// (æ–°)2. åˆå§‹åŒ–ä»¥ä¸Šå£°æ˜çš„æ‰€æœ‰å˜é‡ï¼š2ä¸ªè¾“å…¥æ¡†æ§ä»¶
+		btnAchieve = (Button) findViewById(R.id.rg_btn_achieve);
+		etUsername = (EditText) findViewById(R.id.rg_et_username);
+		etEmail = (EditText) findViewById(R.id.rg_et_email);
+		etPassword = (EditText) findViewById(R.id.rg_et_password);
+		etRePassword = (EditText) findViewById(R.id.rg_et_repassword);
+		// 2.2. å°†æŒ‰é’®é»˜è®¤ç¦ç”¨
+		btnAchieve.setEnabled(false);
+
+		// 4. åˆ›å»ºç›‘å¬å™¨(æˆå‘˜å†…éƒ¨ç±»)å¯¹è±¡
+		InnerOnClickListener listener = new InnerOnClickListener();
+		// (æ–°)4. åˆ›å»ºç›‘å¬å™¨(å®ç°äº†æ¥å£çš„å†…éƒ¨ç±»)çš„å¯¹è±¡
+		InnerTextWatcher watcher = new InnerTextWatcher();
+		Ci_image.setVisibility(View.VISIBLE);
+		// 5. ä¸ºæŒ‰é’®é…ç½®ç›‘å¬å™¨
+		btnAchieve.setOnClickListener(listener);
+		// (æ–°)5. ä¸º2ä¸ªè¾“å…¥æ¡†é…ç½®ç›‘å¬å™¨
+		etUsername.addTextChangedListener(watcher);
+		etPassword.addTextChangedListener(watcher);
+		etRePassword.addTextChangedListener(watcher);
+	}
+
+	private void SetOnClick() {
+		//æ ‡é¢˜æ ç»“æŸ
 		title_left.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -56,31 +119,57 @@ public class RegisterActivity extends Activity {
 				finish();
 			}
 		});
-		//ÉèÖÃ±êÌâÀ¸--end
-		// 2.1. ³õÊ¼»¯ÒÔÉÏÉùÃ÷µÄËùÓĞ¿Ø¼ş
-		// (ĞÂ)2. ³õÊ¼»¯ÒÔÉÏÉùÃ÷µÄËùÓĞ±äÁ¿£º2¸öÊäÈë¿ò¿Ø¼ş
-		btnAchieve = (Button) findViewById(R.id.rg_btn_achieve);
-		etUsername = (EditText) findViewById(R.id.rg_et_username);
-		etEmail = (EditText) findViewById(R.id.rg_et_email);
-		etPassword = (EditText) findViewById(R.id.rg_et_password);
-		etRePassword = (EditText) findViewById(R.id.rg_et_repassword);
-		// 2.2. ½«°´Å¥Ä¬ÈÏ½ûÓÃ
-		btnAchieve.setEnabled(false);
+		Ci_image.setOnClickListener(new OnClickListener() {
 
-		// 4. ´´½¨¼àÌıÆ÷(³ÉÔ±ÄÚ²¿Àà)¶ÔÏó
-		InnerOnClickListener listener = new InnerOnClickListener();
-		// (ĞÂ)4. ´´½¨¼àÌıÆ÷(ÊµÏÖÁË½Ó¿ÚµÄÄÚ²¿Àà)µÄ¶ÔÏó
-		InnerTextWatcher watcher = new InnerTextWatcher();
-
-		// 5. Îª°´Å¥ÅäÖÃ¼àÌıÆ÷
-		btnAchieve.setOnClickListener(listener);
-		// (ĞÂ)5. Îª2¸öÊäÈë¿òÅäÖÃ¼àÌıÆ÷
-		etUsername.addTextChangedListener(watcher);
-		etPassword.addTextChangedListener(watcher);
-		etRePassword.addTextChangedListener(watcher);
+			@Override
+			public void onClick(View v) {
+				showPop();
+			}
+		});
 	}
-
-	// (ĞÂ)3. ×Ô¶¨ÒåÄÚ²¿Àà£¬ÊµÏÖTextWatcher½Ó¿Ú
+	/**
+	 *  å¯®ç‘°åš­ popupwindow
+	 */
+	public void showPop(){
+		View mainView = LayoutInflater.from(this).inflate(R.layout.alert_setphoto_menu_layout, null);
+		Button btnTakePhoto = (Button) mainView.findViewById(R.id.btn_take_photo);
+		btnTakePhoto.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				mSetPhotoPop.dismiss();
+				// é·å¶‡åé‘¾å³°å½‡
+				doTakePhoto();
+			}
+		});
+		Button btnCheckFromGallery = (Button) mainView.findViewById(R.id.btn_check_from_gallery);
+		btnCheckFromGallery.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				mSetPhotoPop.dismiss();
+				// é©ç¨¿å”½é‘¾å³°å½‡
+				doPickPhotoFromGallery();
+			}
+		});
+		Button btnCancle = (Button) mainView.findViewById(R.id.btn_cancel);
+		btnCancle.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				mSetPhotoPop.dismiss();
+			}
+		});
+		mSetPhotoPop = new PopupWindow(this);
+		mSetPhotoPop.setBackgroundDrawable(new BitmapDrawable());
+		mSetPhotoPop.setFocusable(true);
+		mSetPhotoPop.setTouchable(true);
+		mSetPhotoPop.setOutsideTouchable(true);
+		mSetPhotoPop.setContentView(mainView);
+		mSetPhotoPop.setWidth(ViewGroup.LayoutParams.MATCH_PARENT);
+		mSetPhotoPop.setHeight(ViewGroup.LayoutParams.WRAP_CONTENT);
+		mSetPhotoPop.setAnimationStyle(R.style.bottomStyle);
+		mSetPhotoPop.showAtLocation(Re_Main, Gravity.BOTTOM, 0, 0);
+		mSetPhotoPop.update();
+	}
+	// (æ–°)3. è‡ªå®šä¹‰å†…éƒ¨ç±»ï¼Œå®ç°TextWatcheræ¥å£
 	private class InnerTextWatcher implements TextWatcher {
 
 		@Override
@@ -93,7 +182,7 @@ public class RegisterActivity extends Activity {
 
 		@Override
 		public void afterTextChanged(Editable s) {
-			// (ĞÂ)¡¾ÊµÏÖ¼àÌı·½·¨¡¿
+			// (æ–°)ã€å®ç°ç›‘å¬æ–¹æ³•ã€‘
 			String username = etUsername.getText().toString().trim();
 			String password = etPassword.getText().toString();
 			String repassword = etRePassword.getText().toString();
@@ -102,38 +191,186 @@ public class RegisterActivity extends Activity {
 		}
 
 	}
-
-	// 3. Ê¹ÓÃ³ÉÔ±ÄÚ²¿ÀàµÄÓï·¨£¬ÊµÏÖOnClickListener½Ó¿Ú
+	@Override
+	protected void onResume() {
+		super.onResume();
+		//è·å–åˆ°å­—ç¬¦ä¸²é‡Œçš„å†…å®¹å¹¶è½¬æˆå›¾ç‰‡
+		PreferencesService service=new PreferencesService(getApplicationContext());
+		User user=service.getUserPerferences();
+		BitmapUtils utils=new BitmapUtils();
+		String imgString=user.getIcon();
+		if (!(imgString.equals(""))) {
+			Log.i("TAG", imgString);
+			Ci_image.setImageBitmap(utils.StringToIcon(imgString));
+		}
+	}
+	// 3. ä½¿ç”¨æˆå‘˜å†…éƒ¨ç±»çš„è¯­æ³•ï¼Œå®ç°OnClickListeneræ¥å£
 	private class InnerOnClickListener implements OnClickListener {
 
 		@Override
 		public void onClick(View v) {
-			// ¡¾¼àÌı·½·¨¡¿
-			// 1. ×¼±¸³õÊ¼Êı¾İ
-			// -- ´ÓÊäÈë¿ò¿Ø¼şÖĞ»ñÈ¡ÓÃ»§ÊäÈëµÄÓÃ»§ÃûºÍÃÜÂë
+			// ã€ç›‘å¬æ–¹æ³•ã€‘
+			// 1. å‡†å¤‡åˆå§‹æ•°æ®
+			// -- ä»è¾“å…¥æ¡†æ§ä»¶ä¸­è·å–ç”¨æˆ·è¾“å…¥çš„ç”¨æˆ·åå’Œå¯†ç 
 			String username = etUsername.getText().toString().trim();
 			String email = etEmail.getText().toString().trim();
 			String password = etPassword.getText().toString().trim();
 			String repassword = etRePassword.getText().toString().trim();
 			String msg;
 
-			// -- ÅĞ¶ÏÓÃ»§ÊäÈëµÄÓÃ»§ÃûºÍÃÜÂëÊÇ·ñÕıÈ·£¬²¢ÔËËã³ö½á¹û
+			// -- åˆ¤æ–­ç”¨æˆ·è¾“å…¥çš„ç”¨æˆ·åå’Œå¯†ç æ˜¯å¦æ­£ç¡®ï¼Œå¹¶è¿ç®—å‡ºç»“æœ
 			if (password.equals(repassword)) {
 				RegLogin_Server server=new RegLogin_Server(RegisterActivity.this);
-				String s=server.register(username,password,email);
+				String s=server.register(username,password,email,imgString);
 				msg=s;
 			} else {
-				msg = "Á½´ÎÊäÈëÃÜÂë²»Ò»Ñù";
+				msg = "ä¸¤æ¬¡è¾“å…¥å¯†ç ä¸ä¸€æ ·";
 			}
 
-			// 3. ÌáÊ¾½á¹û
-			// -- Ê¹ÓÃToastÌáÊ¾½á¹û
+			// 3. æç¤ºç»“æœ
+			// -- ä½¿ç”¨Toastæç¤ºç»“æœ
 			Toast.makeText(RegisterActivity.this, msg, Toast.LENGTH_SHORT).show();
-			if(msg.equals("×¢²á³É¹¦")){
+			if(msg.equals("æ³¨å†ŒæˆåŠŸ")){
 				startActivity(new Intent(RegisterActivity.this,MainActivity.class));
 				finish();
 			}
 		}
 
+	}
+	/**
+	 * ç’‹å†ªæ•¤ç»¯è¤ç²ºé©å‘Šæº€é·å¶‡å
+	 */
+	protected void doTakePhoto() {
+		try {
+			// Launch camera to take photo for selected contact
+			File file = new File(Environment.getExternalStorageDirectory() + "/DCIM/Photo");
+			if (!file.exists()) {
+				file.mkdirs();
+			}
+			mCurrentPhotoFile = new File(file, PhotoUtil.getRandomFileName());
+			final Intent intent = getTakePickIntent(mCurrentPhotoFile);
+			startActivityForResult(intent, CAMERA_WITH_DATA);
+		} catch (ActivityNotFoundException e) {
+			Toast.makeText(this, R.string.photoPickerNotFoundText, Toast.LENGTH_LONG).show();
+		}
+	}
+
+	/**
+	 * Constructs an intent for capturing a photo and storing it in a temporary
+	 * file.
+	 */
+	public static Intent getTakePickIntent(File f) {
+		Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE, null);
+		intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(f));
+		return intent;
+	}
+
+	/**
+	 * é©å‘Šæº€é“î„åé¥å‰§å¢–
+	 */
+	protected void doCropPhoto(File f) {
+		try {
+			// Add the image to the media store
+			MediaScannerConnection.scanFile(this, new String[]{
+					f.getAbsolutePath()
+			}, new String[]{
+					null
+			}, null);
+
+			// Launch gallery to crop the photo
+			final Intent intent = getCropImageIntent(Uri.fromFile(f));
+			startActivityForResult(intent, CAMERA_CROP_RESULT);
+		} catch (Exception e) {
+			Toast.makeText(this, R.string.photoPickerNotFoundText, Toast.LENGTH_LONG).show();
+		}
+	}
+
+	/**
+	 * é‘¾å³°å½‡ç»¯è¤ç²ºé“î‡î—†é¥å‰§å¢–é¨å‡¦ntent.
+	 */
+	public static Intent getCropImageIntent(Uri photoUri) {
+		Intent intent = new Intent("com.android.camera.action.CROP");
+		intent.setDataAndType(photoUri, "image/*");
+		intent.putExtra("crop", "true");
+		intent.putExtra("aspectX", 1);
+		intent.putExtra("aspectY", 1);
+		intent.putExtra("outputX", ICON_SIZE);
+		intent.putExtra("outputY", ICON_SIZE);
+		intent.putExtra("return-data", true);
+		return intent;
+	}
+
+	/**
+	 * æµ åº£æµ‰éå²„ï¿½å¤‹å«¨é¥å‰§å¢–
+	 */
+	protected void doPickPhotoFromGallery() {
+		try {
+			// Launch picker to choose photo for selected contact
+			final Intent intent = getPhotoPickIntent();
+			startActivityForResult(intent, PHOTO_PICKED_WITH_DATA);
+		} catch (ActivityNotFoundException e) {
+			Toast.makeText(this, R.string.photoPickerNotFoundText, Toast.LENGTH_LONG).show();
+		}
+	}
+
+	/**
+	 * é‘¾å³°å½‡ç’‹å†ªæ•¤é©ç¨¿å”½é¨å‡¦ntent
+	 */
+	public static Intent getPhotoPickIntent() {
+		Intent intent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+		return intent;
+	}
+
+	/**
+	 * é©ç¨¿å”½ç‘ä½¸å£€é¥å‰§å¢–
+	 *
+	 * @param uri
+	 */
+	public void startPhotoZoom(Uri uri) {
+		Intent intent = new Intent("com.android.camera.action.CROP");//ç’‹å†ªæ•¤Androidç»¯è¤ç²ºé‘·î„ç”«é¨å‹ªç«´æ¶“î„æµ˜é—å›§å£€ç‘ä¾€ã€‰é—ˆï¿½,
+		intent.setDataAndType(uri, "image/*");
+		intent.putExtra("crop", "true");//æ©æ¶œî”‘æ·‡î†¼å£€
+		// aspectX aspectY é„îˆšî†”æ¥‚æ¨¼æ®‘å§£æ–¾ç·¥
+		intent.putExtra("aspectX", 1);
+		intent.putExtra("aspectY", 1);
+		// outputX outputY é„îˆî—†é“î„æµ˜é—å›§î†”æ¥‚ï¿½
+		intent.putExtra("outputX", ICON_SIZE);
+		intent.putExtra("outputY", ICON_SIZE);
+		intent.putExtra("return-data", true);
+		startActivityForResult(intent, PHOTO_CROP_RESOULT);
+	}
+
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		super.onActivityResult(requestCode, resultCode, data);
+		BitmapUtils utils=new BitmapUtils();
+		if (resultCode == RESULT_OK) {
+			ByteArrayOutputStream stream = new ByteArrayOutputStream();
+			switch (requestCode) {
+			case PHOTO_PICKED_WITH_DATA:
+				// é©ç¨¿å”½é–«å¤‹å«¨é¥å‰§å¢–éšåº¤î—†é“î„æµ˜é—ï¿½
+				startPhotoZoom(data.getData());
+				break;
+			case PHOTO_CROP_RESOULT:
+				Bundle extras = data.getExtras();
+				if (extras != null) {
+					imageBitmap = extras.getParcelable("data");
+					//imageBitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
+					imgString=utils.IconToString(imageBitmap);
+					Ci_image.setImageBitmap(imageBitmap);
+				}
+				break;
+			case CAMERA_WITH_DATA:
+				// é©å‘Šæº€é·å¶‡åéšåº¤î—†é“î„æµ˜é—ï¿½
+				doCropPhoto(mCurrentPhotoFile);
+				break;
+			case CAMERA_CROP_RESULT:
+				imageBitmap = data.getParcelableExtra("data");
+				imgString=utils.IconToString(imageBitmap);
+				// imageBitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
+				Ci_image.setImageBitmap(imageBitmap);
+				break;
+			}
+		}
 	}
 }

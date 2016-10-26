@@ -1,5 +1,6 @@
 package com.news.news.untils;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 
@@ -10,9 +11,10 @@ import com.news.news.adapter.Holder.VideoItemView;
 import com.news.news.app.App;
 
 import android.graphics.Bitmap;
+import android.graphics.Bitmap.CompressFormat;
 import android.graphics.Bitmap.Config;
 import android.graphics.BitmapFactory;
-import android.graphics.Bitmap.CompressFormat;
+import android.util.Base64;
 import android.widget.RelativeLayout.LayoutParams;
 public class BitmapUtils  {
 	public static void loadBitmap(final String url,final VideoItemView holder){ 
@@ -61,7 +63,46 @@ public class BitmapUtils  {
 		b.compress(CompressFormat.JPEG, 100, out);
 
 	}
-
+	/**  
+     * 图片转成string  
+     *   
+     * @param bitmap  
+     * @return  
+     */  
+    public static String IconToString(Bitmap bitmap)  
+    {  
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();// outputstream  
+        bitmap.compress(CompressFormat.PNG, 100, baos);  
+        byte[] appicon = baos.toByteArray();// 转为byte数组  
+        return Base64.encodeToString(appicon, Base64.DEFAULT);  
+  
+    }  
+  
+    /**  
+     * string转成bitmap  
+     *   
+     * @param st  
+     */  
+    public static Bitmap StringToIcon(String st)  
+    {  
+        // OutputStream out;  
+        Bitmap bitmap = null;  
+        try  
+        {  
+            // out = new FileOutputStream("/sdcard/aa.jpg");  
+            byte[] bitmapArray;  
+            bitmapArray = Base64.decode(st, Base64.DEFAULT);  
+            bitmap =  
+                    BitmapFactory.decodeByteArray(bitmapArray, 0,  
+                            bitmapArray.length);  
+            // bitmap.compress(Bitmap.CompressFormat.PNG, 100, out);  
+            return bitmap;  
+        }  
+        catch (Exception e)  
+        {  
+            return null;  
+        }  
+    }  
 	public static Bitmap loadBitmap(File file) {
 		if(!file.exists()){
 			return null;

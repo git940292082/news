@@ -54,5 +54,12 @@
             android:textColor="@color/Color.Main.a" />
         
     </RelativeLayout>
-
+	<ImageButton 
+	    android:id="@+id/news_item_fenxiang"
+	    android:layout_width="30dp"
+	    android:layout_height="30dp"
+	    android:src="@drawable/ic_fenxiang"
+	    android:scaleType="centerInside"
+	    android:background="@null"/>
+	
 </LinearLayout>

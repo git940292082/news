@@ -9,6 +9,7 @@ import com.news.news.fragment.FramFunny;
 import com.news.news.fragment.FramMine;
 import com.news.news.fragment.FramNews;
 import com.news.news.fragment.FramVideo;
+import com.news.news.ui.MyFramPage;
 import com.zxing.android.CaptureActivity;
 
 import android.content.Intent;
@@ -35,7 +36,7 @@ import android.widget.RadioGroup.OnCheckedChangeListener;
 public class MainActivity extends FragmentActivity implements OnCheckedChangeListener,OnClickListener{
 
 	private RadioGroup rg;
-	private ViewPager framPage;
+	private MyFramPage framPage;
 	private TextView tvTitle;
 	private ArrayList<Fragment> Fragmengs;
 	private ImageButton IBtnJia;
@@ -47,7 +48,7 @@ public class MainActivity extends FragmentActivity implements OnCheckedChangeLis
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		App.main=this;
+		App app=new App();
 		loadView();
 
 		loadListener();
@@ -58,7 +59,7 @@ public class MainActivity extends FragmentActivity implements OnCheckedChangeLis
 		// TODO Auto-generated method stub
 		rg=(RadioGroup)findViewById(R.id.main_groaup);
 		tvTitle=(TextView)findViewById(R.id.main_tv_title);
-		framPage=(ViewPager)findViewById(R.id.main_fram);
+		framPage=(MyFramPage)findViewById(R.id.main_fram);
 		IBtnJia=(ImageButton) findViewById(R.id.main_itbn_jia);
 		view=View.inflate(this, R.layout.windows, null);
 		btnShao=(Button)view.findViewById(R.id.windos_shao);
@@ -127,7 +128,7 @@ public class MainActivity extends FragmentActivity implements OnCheckedChangeLis
 			break;
 		case R.id.radio2:
 			framPage.setCurrentItem(1,false);
-			tvTitle.setText("  娱乐  ");
+			tvTitle.setText("  搞笑  ");
 			break;
 		case R.id.radio3:
 			framPage.setCurrentItem(2,false);

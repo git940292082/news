@@ -2,9 +2,10 @@ package com.news.news.entity;
 
 public class User {
 	private long id;
-	private String user;
+	private String name;
 	private String pass;
 	private String email;
+	private String icon;
 
 	public long getId() {
 		return id;
@@ -14,11 +15,11 @@ public class User {
 		this.id = id;
 	}
 
-	public String getUser() {
-		return user;
+	public String getName() {
+		return name;
 	}
-	public void setUser(String user) {
-		this.user = user;
+	public void setName(String name) {
+		this.name = name;
 	}
 	public String getPass() {
 		return pass;
@@ -31,5 +32,13 @@ public class User {
 	}
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public String getIcon() {
+		return icon;
+	}
+
+	public void setIcon(String icon) {
+		this.icon = icon;
 	}
 }

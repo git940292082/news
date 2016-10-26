@@ -18,7 +18,6 @@ import com.news.news.entity.news.Toutiao;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
-import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
@@ -26,11 +25,12 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.Toast;
 @ZRLayout(R.layout.activity_collection)
 public class CollectionActivity extends BaseActivity{
 	@ZRView(R.id.lv_collection)
-	PullToRefreshListView collection;
+	ListView collection;
 	@ZRView(R.id.collecion_back)
 	ImageView btnBack;
 	@ZRView(R.id.collection_btn_clear)
@@ -49,8 +49,7 @@ public class CollectionActivity extends BaseActivity{
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
 				// TODO Auto-generated method stub
-				Object object=App.collections.get(arg2-1);
-				Log.i("xxxxxxxx", object.getClass().getName()+(arg2-1));
+				Object object=App.collections.get(arg2);
 				Intent intent=new Intent();
 				if(object instanceof Toutiao){
 					intent.setClass(getApplicationContext(), NewsWebActivity.class);

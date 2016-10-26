@@ -1,7 +1,6 @@
 package com.news.news.server;
 
-import java.util.HashMap;
-import java.util.Map;
+import com.news.news.entity.User;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -13,24 +12,22 @@ public class PreferencesService {
 		this.context = context;  
 	}  
 
-	public void saveUser(String name,String pwd,String classs,boolean a,boolean jizhu) {
+	public void saveUser(User user) {
 		SharedPreferences preferences = context.getSharedPreferences("denglu", Context.MODE_PRIVATE);  
 		Editor editor = preferences.edit();  
-		editor.putString("name", name);  
-		editor.putString("pwd", pwd);  
-		editor.putString("email",classs);
-		editor.putBoolean("boolean", a);
-		editor.putBoolean("jizhu",jizhu);
+		editor.putString("name", user.getName());  
+		editor.putString("pwd", user.getPass());  
+		editor.putString("email",user.getEmail());
+		editor.putString("icon",user.getIcon());
 		editor.commit();  
 	}  
-	public Map<String, Object> getUserPerferences() {
-		Map<String, Object> params = new HashMap<String, Object>();  
+	public User getUserPerferences() {
+		User user=new User();
 		SharedPreferences preferences = context.getSharedPreferences("denglu", Context.MODE_PRIVATE);  
-		params.put("name", preferences.getString("name", ""));  
-		params.put("pwd", preferences.getString("pwd", ""));  
-		params.put("classs", preferences.getString("email", ""));
-		params.put("boolean", preferences.getBoolean("boolean", false));
-		params.put("jizhu", preferences.getBoolean("jizhu", false));
-		return params;  
+		user.setName(preferences.getString("name", ""));  
+		user.setPass(preferences.getString("pwd", ""));  
+		user.setEmail(preferences.getString("email", ""));
+		user.setIcon(preferences.getString("icon", ""));
+		return user;  
 	}
 }

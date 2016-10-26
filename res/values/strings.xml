@@ -9,9 +9,8 @@
     <string name="password">密码</string>
     <string name="repassword">确认密码</string>
     <string name="login_main">登录界面</string>
-    <string name="app_id">1105677889</string>
-    <string name="app_key">FTsxf6kuhg4xNVyz</string>
-
+	<string name="qq_id">1105677889</string>
+	<string name="qq_key">FTsxf6kuhg4xNVyz</string>
     <string-array name="find_sp_luck">
         <item>白羊座</item>
         <item>金牛座 </item>
@@ -30,6 +29,8 @@
     <string name="title_activity_funny_fragment__item__to_">FunnyFragment_Item_To_Activity</string>
     <string name="title_activity_news_web">NewsWebActivity</string>
     <string name="title_activity_video_play">VideoPlayActivity</string>
+    <string name="title_activity_setting">SettingActivity</string>
     <string name="title_activity_collection">CollectionActivity</string>
+    <string name="photoPickerNotFoundText">手机中无可用的图片</string>
 
 </resources>

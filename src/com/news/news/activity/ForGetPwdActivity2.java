@@ -60,7 +60,7 @@ public class ForGetPwdActivity2 extends Activity implements View.OnClickListener
         user.setId(id);
         user.setEmail(email);
         user.setPass(pwd);
-        user.setUser(name);
+        user.setName(name);
         reg.update(user);
         finish();
     }

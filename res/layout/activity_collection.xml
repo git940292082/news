@@ -21,17 +21,15 @@
         android:layout_height="45dp"
         android:padding="8dp"
         android:src="@drawable/back" />
-    <com.handmark.pulltorefresh.library.PullToRefreshListView
+    <ListView
         android:id="@+id/lv_collection"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/view1"
         android:divider="@null"
         android:scrollbars="@null"
-        animation:ptrDrawableStart="@drawable/ic_finish_j"
-        animation:ptrHeaderBackground="#fff"
-        animation:ptrHeaderSubTextColor="#f73a56" >
-    </com.handmark.pulltorefresh.library.PullToRefreshListView>
+        >
+    </ListView>
 
     <Button
         android:id="@+id/collection_btn_clear"

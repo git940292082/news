@@ -65,7 +65,7 @@
             android:id="@+id/radio2"
             style="@style/MainBtGroup"
             android:drawableTop="@drawable/select_rd2"
-            android:text="娱乐" />
+            android:text="搞笑" />
         <RadioButton
             android:id="@+id/radio3"
             style="@style/MainBtGroup"

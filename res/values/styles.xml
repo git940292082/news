@@ -1,14 +1,18 @@
 <resources>
 
+    <style name="bottomStyle">
+        <item name="android:windowEnterAnimation">@anim/bottom_pup_anim_out</item>
+        <item name="android:windowExitAnimation">@anim/bottom_pup_anim_in</item>
+    </style>
     <!--
-        Base application theme, dependent on API level. This theme is replaced
-        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+         Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
     -->
     <style name="AppBaseTheme" parent="android:Theme.Light">
         <!--
-            Theme customizations available in newer API levels can go in
+             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
-            backward-compatibility can go here.
+            backward-compatibility can go here.
         -->
     </style>
 
@@ -29,12 +33,13 @@
         <item name="android:layout_marginTop">1dp</item>
         <item name="android:paddingTop">8dp</item>
     </style>
-    <style name="normalTheme" >
+
+    <style name="normalTheme">
         <item name="mainbackground">@color/white</item>
         <item name="settingbackground">@color/white</item>
     </style>
 
-    <style name="nightTheme" >
+    <style name="nightTheme">
         <item name="mainbackground">@color/night</item>
         <item name="settingbackground">@color/night</item>
     </style>

@@ -4,6 +4,7 @@ import inject.ZRView;
 
 import com.news.news.R;
 
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -16,4 +17,6 @@ public class NewItemView {
 	public TextView tvSource;
 	@ZRView(R.id.tv_news_item_comment)
 	public TextView tvComment;
+	@ZRView(R.id.news_item_fenxiang)
+	public ImageButton btnFenxiang;
 }

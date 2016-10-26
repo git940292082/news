@@ -1,0 +1,66 @@
+# view res/layout/fram_find.xml #generated:44
+# view res/layout/fram_news.xml #generated:123
+-keep class android.support.v4.view.ViewPager { <init>(...); }
+
+# view res/layout/fram_video.xml #generated:7
+-keep class com.handmark.pulltorefresh.library.PullToRefreshListView { <init>(...); }
+
+# view AndroidManifest.xml #generated:75
+-keep class com.news.news.ReturnActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:102
+-keep class com.news.news.activity.CollectionActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:58
+-keep class com.news.news.activity.ForGetPwdActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:62
+-keep class com.news.news.activity.ForGetPwdActivity2 { <init>(...); }
+
+# view AndroidManifest.xml #generated:66
+-keep class com.news.news.activity.FunnyFragment_Item_To_Activity { <init>(...); }
+
+# view AndroidManifest.xml #generated:42
+-keep class com.news.news.activity.LoginActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:30
+-keep class com.news.news.activity.MainActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:50
+-keep class com.news.news.activity.NewsWebActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:46
+-keep class com.news.news.activity.RegisterActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:91
+-keep class com.news.news.activity.VideoPlayActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:24
+-keep class com.news.news.app.App { <init>(...); }
+
+# view AndroidManifest.xml #generated:109
+-keep class com.news.news.server.Server { <init>(...); }
+
+# view res/layout/activity_login.xml #generated:19
+# view res/layout/activity_register.xml #generated:20
+# view res/layout/fram_mine.xml #generated:16
+-keep class com.news.news.ui.CircleImageView { <init>(...); }
+
+# view res/layout/activity_main.xml #generated:40
+-keep class com.news.news.ui.MyFramPage { <init>(...); }
+
+# view AndroidManifest.xml #generated:70
+-keep class com.tencent.connect.common.AssistActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:77
+-keep class com.tencent.tauth.AuthActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:96
+-keep class com.zxing.android.CaptureActivity { <init>(...); }
+
+# view res/layout/activity_capture.xml #generated:13
+-keep class com.zxing.android.view.ViewfinderView { <init>(...); }
+
+# view res/layout/activity_funny_fragment__item__to_.xml #generated:7
+-keep class pl.droidsonroids.gif.GifImageView { <init>(...); }
+

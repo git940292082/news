@@ -12,13 +12,15 @@ import android.util.Log;
 public class RegLogin_Server {
 	private List<User> users;
 	private RegLoginDao dbDao;
+	private PreferencesService ser;
 	public RegLogin_Server(Context context){
 		dbDao=new RegLoginDao(context);
 		users=dbDao.getUsers(null,null);
+		ser=new PreferencesService(context);
 	}
-	public String register(String name,String pwd,String email){
+	public String register(String name,String pwd,String email,String icon){
 		for (User use:users){
-			if (use.getUser().equals(name)){
+			if (use.getName().equals(name)){
 				return "该账号已存在！";
 			}
 			if (use.getEmail().equals(email)){
@@ -26,11 +28,13 @@ public class RegLogin_Server {
 			}
 		}
 		User user=new User();
-		user.setUser(name);
+		user.setName(name);
 		user.setPass(pwd);
 		user.setEmail(email);
+		user.setIcon(icon);
 		try {
 			dbDao.insert(user);
+			userSave(user);
 		}catch (Exception e){
 			e.printStackTrace();
 		}
@@ -38,27 +42,17 @@ public class RegLogin_Server {
 	}
 	public String login(String name,String pwd){
 		for (User use:users){
-			if ((use.getUser().equals(name))&&(use.getPass().equals(pwd))){
-				Log.i("TAG",App.user.toString());
-				Log.i("TAG",use.getUser());
-				App.user.setUser(use.getUser());
-				App.user.setEmail(use.getEmail());
-				App.user.setPass(use.getPass());
-				App.user.setId(use.getId());
+			if ((use.getName().equals(name))&&(use.getPass().equals(pwd))){
+				userSave(use);
 				return "登录成功！";
 			}
 			if ((use.getEmail().equals(name))&&(use.getPass().equals(pwd))){
-				Log.i("TAG",App.user.toString());
-				Log.i("TAG",use.getUser());
-				App.user.setUser(use.getUser());
-				App.user.setEmail(use.getEmail());
-				App.user.setPass(use.getPass());
-				App.user.setId(use.getId());
+				userSave(use);
 				return "登录成功！";
 			}
 		}
 		for (User use:users){
-			if(use.getUser().equals(name)){
+			if(use.getName().equals(name)){
 				return "密码错误，请重试";
 			}
 			if(use.getEmail().equals(name)){
@@ -70,10 +64,14 @@ public class RegLogin_Server {
 
 	public long forGetPwd(String name, String email) {
 		for (User use:users){
-			if ((use.getUser().equals(name))&&(use.getEmail().equals(email))){
+			if ((use.getName().equals(name))&&(use.getEmail().equals(email))){
 				return use.getId();
 			}
 		}
 		return -1;
+	}
+	public void userSave(User user){
+		App.setApp_User(user);
+		ser.saveUser(user);
 	}
 }

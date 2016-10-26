@@ -22,7 +22,7 @@ public class RegLoginDao {
         }
 
         /**
-         *  鏁版嵁搴撲慨鏀�
+         *  閺佺増宓佹惔鎾叉叏閺�锟�
          *
          * @param User
          *
@@ -41,7 +41,7 @@ public class RegLoginDao {
             String whereClause = "_id=? and _user=?";
             String[] whereArgs = new String[2];
             whereArgs[0]=user.getId()+"";
-            whereArgs[1]=user.getUser()+"";
+            whereArgs[1]=user.getName()+"";
             affectedRows = db.update("login", values, whereClause, whereArgs);
             // ??????
             db.close();
@@ -50,7 +50,7 @@ public class RegLoginDao {
         }
 
         /**
-         * 鏁版嵁搴撳垹闄�
+         * 閺佺増宓佹惔鎾冲灩闂勶拷
          *
          * @param id
          *
@@ -74,12 +74,12 @@ public class RegLoginDao {
         }
 
         /**
-         * 鑾峰彇鎵�鏈夌敤鎴锋暟鎹�
+         * 閼惧嘲褰囬幍锟介張澶屾暏閹撮攱鏆熼幑锟�
          *
          * @param whereClause
          *            ???????????where???
          * @param whereArgs
-         *            where????脨赂????????
+         *            where????鑴ㄨ祩????????
          * @return ???????????List?????????????null
          */
         public List<User> getUsers(String whereClause, String[] whereArgs) {
@@ -97,9 +97,10 @@ public class RegLoginDao {
                 for (; !c.isAfterLast(); c.moveToNext()) {
                     User user = new User();
                     user.setId(c.getLong(0));
-                    user.setUser(c.getString(1));
+                    user.setName(c.getString(1));
                     user.setEmail(c.getString(2));
                     user.setPass(c.getString(3));
+                    user.setIcon(c.getString(4));
                     users.add(user);
                 }
             }
@@ -110,7 +111,7 @@ public class RegLoginDao {
         }
 
         /**
-         * 鏁版嵁搴撴煡璇�
+         * 閺佺増宓佹惔鎾寸叀鐠囷拷
          *
          * @return Cursor????
          */
@@ -130,7 +131,7 @@ public class RegLoginDao {
         }
 
         /**
-         *鏁版嵁搴撳鍔�
+         *閺佺増宓佹惔鎾愁杻閸旓拷
          *
          * @param User
          *            ????????
@@ -146,9 +147,10 @@ public class RegLoginDao {
             // ??????????
             String table = "login";
             ContentValues values = new ContentValues();
-            values.put("_user",user.getUser());
+            values.put("_user",user.getName());
             values.put("_email", user.getEmail());
             values.put("_pwd", user.getPass());
+            values.put("_icon", user.getIcon());
             id = db.insert(table, null, values);
             // ??????
             db.close();

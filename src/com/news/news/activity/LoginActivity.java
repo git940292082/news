@@ -1,25 +1,39 @@
 package com.news.news.activity;
 
-import java.util.Map;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.ArrayList;
 
+import org.apache.http.Header;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.xutils.x;
 
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.news.news.R;
 import com.news.news.app.App;
+import com.news.news.entity.User;
 import com.news.news.server.PreferencesService;
 import com.news.news.server.RegLogin_Server;
-import com.news.news.untils.GlobalConsts;
+import com.news.news.ui.CircleImageView;
+import com.news.news.untils.BitmapUtils;
 import com.tencent.connect.UserInfo;
 import com.tencent.connect.auth.QQAuth;
 import com.tencent.tauth.IUiListener;
 import com.tencent.tauth.Tencent;
 import com.tencent.tauth.UiError;
+import com.tencent.utils.AsynLoadImgBack;
+import com.tencent.utils.Util;
 
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -29,9 +43,6 @@ import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.CompoundButton;
-import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -54,46 +65,43 @@ public class LoginActivity extends Activity {
 	private EditText etPassword;
 	private TextView achieve;
 	private PreferencesService perfer;
-	private CheckBox check_jizhu;
 	private AlertDialog mDialog;
-	private CheckBox check_zidong;
 	private String username;
 	private String password;
 	private TextView forPwd;
-	private boolean jizhu;
 	private Tencent mTencent;
 	private ImageButton weibo;
-	private ImageButton weixin;
 	private ImageButton qq;
-	// 测试时使用，真正发布的时候要换成自己的APP_ID
 	private QQAuth mQQAuth;
 	private UserInfo mInfo;
+	private User sp_user;
+	private User user=new User();
+	private RegLogin_Server reLoServer;
+	private CircleImageView image;
+
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_login);
 		// 1.4版本:此处需新增参数，传入应用程序的全局context，可通过activity的getApplicationContext方法获取
-		perfer=new PreferencesService(this);
-		Map<String, Object> login=perfer.getUserPerferences();
-		jizhu=(Boolean)login.get("jizhu");
+		Instan();
 		// 2.1. 初始化以上声明的所有控件
 		SetView();
-		etUsername.setText((String)login.get("name"));
-		etPassword.setText((String)login.get("pwd"));
-		if (jizhu) {
-			check_jizhu.setChecked(true);
+		etUsername.setText(sp_user.getName());
+		etPassword.setText(sp_user.getPass());
+		if (!(sp_user.getIcon().equals(""))) {
+			image.setImageBitmap(BitmapUtils.StringToIcon(sp_user.getIcon()));
 		}
 		//判断是不是自动登录
-		if ((Boolean) login.get("boolean")) {
-			App.user.setUser((String) login.get("name"));
-			App.user.setEmail((String) login.get("email"));
-			App.user.setPass((String) login.get("pwd"));
-			startActivity(new Intent(LoginActivity.this, MainActivity.class));
-			finish();
-		}
+		//		App.user.setUser((String) login.get("name"));
+		//		App.user.setEmail((String) login.get("email"));
+		//		App.user.setPass((String) login.get("pwd"));
+		//		startActivity(new Intent(LoginActivity.this, MainActivity.class));
+		//		finish();
 		achieve=(TextView)findViewById(R.id.lg_tv_rg);
 		forPwd=(TextView)findViewById(R.id.lg_tv_forget);
+
 		SetOnClick();
 		// 2.2. 将按钮默认禁用
 		btnLogin.setEnabled(false);
@@ -108,12 +116,21 @@ public class LoginActivity extends Activity {
 		etUsername.addTextChangedListener(watcher);
 		etPassword.addTextChangedListener(watcher);
 	}
+	/**
+	 *  实例化对象*/
+	private void Instan() {
+		perfer=new PreferencesService(this);
+		sp_user=perfer.getUserPerferences();
+		reLoServer=new RegLogin_Server(getApplicationContext());
+	}
 	@Override
 	protected void onStart() {
 		super.onStart();
-		mQQAuth = QQAuth.createInstance(App.id, getApplicationContext());
-		mTencent = Tencent.createInstance(App.id,getApplicationContext());
+		mQQAuth = QQAuth.createInstance(App.QQID, getApplicationContext());
+		mTencent = Tencent.createInstance(App.QQID,getApplicationContext());
 	}
+	/**
+	 *  点击事件*/
 	private void SetOnClick() {
 		forPwd.setOnClickListener(new OnClickListener() {
 			@Override
@@ -128,24 +145,6 @@ public class LoginActivity extends Activity {
 				startActivity(new Intent(LoginActivity.this,RegisterActivity.class));
 			}
 		});
-		//自动登录状态改变时，改变记住密码的状态
-		check_zidong.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-
-			@Override
-			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-				if (isChecked)  check_jizhu.setChecked(true);
-			}
-		});
-		//判断如果自动登录被点击的话，提示请取消自动登录
-		check_jizhu.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				if (check_zidong.isChecked()) {
-					check_jizhu.setChecked(true);
-					Toast.makeText(LoginActivity.this,"请取消勾选自动登录", Toast.LENGTH_SHORT).show();
-				}
-			}
-		});
 		qq.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -154,6 +153,9 @@ public class LoginActivity extends Activity {
 			}
 		});
 	}
+
+	/**
+	 *  QQ登录*/
 	private void onClickLogin() {
 		if (!mQQAuth.isSessionValid()) {
 			IUiListener listener = new BaseUiListener() {
@@ -182,12 +184,48 @@ public class LoginActivity extends Activity {
 
 				@Override
 				public void onComplete(final Object response) {
-					Message msg = new Message();
-					msg.obj = response;
-					msg.what = 0;
-					mHandler.sendMessage(msg);
-				}
+					Handler handler=new Handler();
+					handler.post(new Runnable() {
+						@Override
+						public void run() {
+							// TODO Auto-generated method stub
+							try {
+								final JSONObject json = (JSONObject) response;
+								String name = json.getString("nickname");
+								user.setName(name);
+								final String string = json.getString("figureurl_qq_2");
+								AsyncHttpClient client=new AsyncHttpClient();
+								client.get(string, new AsyncHttpResponseHandler() {
+									@Override
+									public void onSuccess(int arg0, Header[] arg1, byte[] arg2) {
+										// TODO Auto-generated method stub
+										Bitmap bitmap = BitmapFactory.decodeByteArray(arg2, 0, arg2.length);
+										user.setIcon(BitmapUtils.IconToString(bitmap));
+										try {
+											reLoServer.userSave(user);
+											finish();
+										} catch (Exception e) {
+											// TODO Auto-generated catch block
+											e.printStackTrace();
+											finish();
+										}
+										
+									}
+									
+									@Override
+									public void onFailure(int arg0, Header[] arg1, byte[] arg2, Throwable arg3) {
+										// TODO Auto-generated method stub
+										
+									}
+								});
+								Log.i("213", string);
+								
+							} catch (JSONException e) {
 
+							}
+						}
+					});
+				}
 				@Override
 				public void onCancel() {
 				}
@@ -220,15 +258,13 @@ public class LoginActivity extends Activity {
 	}
 	private void SetView() {
 		// (新)2. 初始化以上声明的所有变量：2个输入框控件
+		image=(CircleImageView)findViewById(R.id.Ci_image);
 		btnLogin = (Button) findViewById(R.id.lg_btn_login);
 		etUsername = (EditText) findViewById(R.id.lg_et_username);
 		etPassword = (EditText) findViewById(R.id.lg_et_password);
 		//记住密码
-		check_jizhu=(CheckBox)findViewById(R.id.checkBox1);
 		//自动登录
-		check_zidong=(CheckBox)findViewById(R.id.CheckBox2);
 		qq=(ImageButton)findViewById(R.id.qq_Button);
-		weixin=(ImageButton)findViewById(R.id.weixin_Button);
 		weibo=(ImageButton)findViewById(R.id.weibo_Button);
 	}
 
@@ -258,7 +294,11 @@ public class LoginActivity extends Activity {
 			String username = etUsername.getText().toString().trim();
 			String password = etPassword.getText().toString();
 			btnLogin.setEnabled(password.length() >= 3);
-
+			if (username.equals(sp_user.getName())) {
+				image.setImageBitmap(BitmapUtils.StringToIcon(sp_user.getIcon()));
+			}else{
+				image.setImageResource(R.drawable.iconimage);
+			}
 		}
 
 	}
@@ -285,41 +325,34 @@ public class LoginActivity extends Activity {
 			// -- 使用Toast提示结果
 			Toast.makeText(LoginActivity.this, msg, Toast.LENGTH_SHORT).show();
 			if (msg.equals("登录成功！")) {
-				if (check_zidong.isChecked()) {
-					if (check_jizhu.isChecked()) perfer.saveUser(username, password, App.user.getEmail(),true,true);
-					else perfer.saveUser(username, "",App.user.getEmail(), true,false);
-				}else {
-					if (check_jizhu.isChecked()) perfer.saveUser(username, password, App.user.getEmail(),false,true);
-					else perfer.saveUser(username, "",App.user.getEmail(), false, false);
-				}
-				startActivity(new Intent(LoginActivity.this, MainActivity.class));
 				finish();
 			}
 			mDialog.dismiss();
 		}
-
 	}
 
-	Handler mHandler = new Handler() {
-
-		@Override
-		public void handleMessage(Message msg) {
-			if (msg.what == 0) {
-				JSONObject response = (JSONObject) msg.obj;
-				Log.i("TAG", response.toString());
-				if (response.has("nickname")) {
-					try {
-						Log.i("name",response.getString("nickname")); 
-						App.user.setUser(response.getString("nickname"));
-						startActivity(new Intent(LoginActivity.this, MainActivity.class));
-						finish();
-					} catch (JSONException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-				}
-			} 
+	/**
+	 * 根据一个网络连接(String)获取bitmap图像
+	 * 
+	 * @param imageUri
+	 * @return
+	 * @throws MalformedURLException
+	 */
+	public static Bitmap getbitmap(String imageUri) {
+		// 显示网络上的图片
+		Bitmap bitmap = null;
+		try {
+			URL myFileUrl = new URL(imageUri);
+			HttpURLConnection conn = (HttpURLConnection) myFileUrl.openConnection();
+			conn.setDoInput(true);
+			conn.connect();
+			InputStream is = conn.getInputStream();
+			bitmap = BitmapFactory.decodeStream(is);
+			is.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+			return null;
 		}
-
-	};
+		return bitmap;
+	}
 }

@@ -1,20 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:id="@+id/Re_Main" >
 
-    <include 
+    <include
         android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        layout="@layout/title"/>
+        layout="@layout/title" />
+
+   <RelativeLayout
+        android:id="@+id/rl_lo_title"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_below="@+id/title"
+        android:background="@color/imgback" >
+
+        <com.news.news.ui.CircleImageView
+            android:id="@+id/Ci_image"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/iconimage" />
+
+    </RelativeLayout>
 
     <RelativeLayout
-        android:id="@+id/rg_rl_form"
-        android:layout_marginTop="20dp"
+        android:id="@+id/rg_re_form"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/title"
+        android:layout_below="@+id/rl_lo_title"
         android:background="#0050f0"
         android:paddingBottom="0.5dp"
         android:paddingTop="0.5dp" >
@@ -32,6 +49,7 @@
             android:text="@string/username"
             android:textColor="#333333"
             android:textSize="14sp" />
+
         <EditText
             android:id="@+id/rg_et_username"
             android:layout_width="match_parent"
@@ -39,14 +57,14 @@
             android:layout_alignTop="@+id/rg_tv_username"
             android:layout_toRightOf="@+id/rg_tv_username"
             android:background="#ffffff"
+            android:hint="输入您的用户名"
             android:inputType="text"
             android:paddingLeft="8dp"
             android:paddingRight="8dp"
             android:textColor="#333333"
-            android:hint="输入您的用户名"
             android:textSize="14sp" >
-
         </EditText>
+
         <TextView
             android:id="@+id/rg_tv_email"
             android:layout_width="80dp"
@@ -68,11 +86,12 @@
             android:layout_alignLeft="@+id/rg_et_username"
             android:layout_alignTop="@+id/rg_tv_email"
             android:background="#ffffff"
+            android:hint="输入邮箱"
             android:paddingLeft="8dp"
             android:paddingRight="8dp"
             android:textColor="#333333"
-            android:hint="输入邮箱"
             android:textSize="14sp" />
+
         <TextView
             android:id="@+id/rg_tv_password"
             android:layout_width="80dp"
@@ -93,11 +112,11 @@
             android:layout_alignLeft="@+id/rg_et_username"
             android:layout_alignTop="@+id/rg_tv_password"
             android:background="#ffffff"
+            android:hint="输入3位以上密码"
             android:inputType="textPassword"
             android:paddingLeft="8dp"
             android:paddingRight="8dp"
             android:textColor="#333333"
-            android:hint="输入3位以上密码"
             android:textSize="14sp" />
 
         <TextView
@@ -105,11 +124,11 @@
             android:layout_width="80dp"
             android:layout_height="36dp"
             android:layout_below="@+id/rg_tv_password"
+            android:layout_marginTop="0.5dp"
             android:background="#ffffff"
             android:gravity="left|center"
             android:paddingLeft="8dp"
             android:paddingRight="8dp"
-            android:layout_marginTop="0.5dp"
             android:text="@string/repassword"
             android:textColor="#333333"
             android:textSize="14sp" />
@@ -120,14 +139,14 @@
             android:layout_height="36dp"
             android:layout_alignLeft="@+id/rg_et_username"
             android:layout_below="@+id/rg_tv_password"
+            android:layout_marginTop="0.5dp"
             android:layout_toRightOf="@+id/rg_tv_password"
             android:background="#ffffff"
+            android:hint="输入3位以上密码"
             android:inputType="textPassword"
-            android:layout_marginTop="0.5dp"
             android:paddingLeft="8dp"
             android:paddingRight="8dp"
             android:textColor="#333333"
-            android:hint="输入3位以上密码"
             android:textSize="14sp" />
     </RelativeLayout>
 
@@ -135,7 +154,7 @@
         android:id="@+id/rg_btn_achieve"
         android:layout_width="match_parent"
         android:layout_height="36dp"
-        android:layout_below="@+id/rg_rl_form"
+        android:layout_below="@+id/rg_re_form"
         android:layout_centerHorizontal="true"
         android:layout_margin="16dp"
         android:background="@drawable/lg_selector_button"

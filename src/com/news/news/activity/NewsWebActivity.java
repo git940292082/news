@@ -1,10 +1,14 @@
 package com.news.news.activity;
 
+import java.net.URI;
+import java.net.URL;
+
 import inject.BaseActivity;
 import inject.Onclick;
 import inject.ZRLayout;
 import inject.ZRView;
 
+import org.apache.http.HttpConnection;
 import org.xutils.x;
 import org.xutils.view.annotation.ViewInject;
 
@@ -59,6 +63,9 @@ public class NewsWebActivity extends BaseActivity {
 			}
 		}
 	}
+	private void setlistner() {
+		// TODO Auto-generated method stub
+	}
 	// »ØÍË
 	@Override
 	public void onBackPressed() {
@@ -86,6 +93,7 @@ public class NewsWebActivity extends BaseActivity {
 		default:
 			break;
 		}
+	
 	}
 
 }

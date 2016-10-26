@@ -22,6 +22,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.IBinder;
 import android.util.Log;
 
@@ -42,7 +43,6 @@ Context context;
 	public class KeepAlive extends Thread{
 		boolean isRunning=true;
 		NewsModel  model;
-		protected Toutiao toutiao;
 		public KeepAlive() {
 			model=new NewsModel();
 			
@@ -62,7 +62,7 @@ Context context;
 							// TODO Auto-generated method stub
 							try {
 								News news=(News) object;
-								toutiao = news.getResult().getData().get(new Random().nextInt(news.getResult().getData().size()));
+								final Toutiao toutiao = news.getResult().getData().get(new Random().nextInt(news.getResult().getData().size()));
 								AsyncHttpClient client=new AsyncHttpClient();
 								client.get(toutiao.getThumbnail_pic_s(), new AsyncHttpResponseHandler() {
 									
@@ -70,7 +70,7 @@ Context context;
 									public void onSuccess(int arg0, Header[] arg1, byte[] arg2) {
 										// TODO Auto-generated method stub
 										Bitmap bitmap = BitmapFactory.decodeByteArray(arg2, 0, arg2.length);
-										msg(bitmap);
+										msg(bitmap,toutiao);
 									}
 									
 									@Override
@@ -93,7 +93,7 @@ Context context;
 			
 		}
 		
-		public void msg(Bitmap bitmap){
+		public void msg(Bitmap bitmap,Toutiao  toutiao){
 			final NotificationManager noMsg=(NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 			Builder builder =new Builder(context);
 			Intent i=new Intent(context,NewsWebActivity.class);
@@ -109,7 +109,8 @@ Context context;
 			.setContentIntent(intent)
 			.setAutoCancel(true);
 			Notification n=builder.build();
-			noMsg.notify(toutiao.hashCode(),n);
+			n.sound=Uri.parse("android.resource://" + getPackageName() + "/" +R.raw.notification);
+			noMsg.notify(666,n);
 		}
 	}
 }

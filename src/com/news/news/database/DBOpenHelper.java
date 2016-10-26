@@ -24,7 +24,8 @@ public class DBOpenHelper extends SQLiteOpenHelper {
 				+ "_id INTEGER PRIMARY KEY AUTOINCREMENT, "
 				+ "_user VARCHAR(16) UNIQUE NOT NULL, "
 				+"_email VARCHAR(16) NOT NULL,"
-				+"_pwd VARCHAR(16) NOT NULL"
+				+"_pwd VARCHAR(16) NOT NULL,"
+				+"_icon VARCHAR(16)"
 				+ ")";
 		db.execSQL(sqlo);
 	}
